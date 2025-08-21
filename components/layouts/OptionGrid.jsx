@@ -1,7 +1,7 @@
 "use client"
 
 import { useState, useEffect } from "react"
-import { formatOptionsForDisplay } from "../../lib/config-helpers.js"
+import { formatOptionsForDisplay } from "../../lib/supabase-config-helpers.js"
 
 // Simple Card component (replacing complex UI library)
 function Card({ children, className = "", onClick }) {
@@ -66,10 +66,10 @@ export function OptionGrid({ section, selections = {}, onSelect, productId }) {
 
   // Load visible options using rules engine
   useEffect(() => {
-    const loadVisibleOptions = () => {
+    const loadVisibleOptions = async () => {
       setLoading(true)
       try {
-        const formattedOptions = formatOptionsForDisplay(section, selections, productId)
+        const formattedOptions = await formatOptionsForDisplay(section, selections, productId)
         setVisibleOptions(formattedOptions)
       } catch (error) {
         console.error('Error loading visible options:', error)
@@ -86,8 +86,8 @@ export function OptionGrid({ section, selections = {}, onSelect, productId }) {
             description: option.description || '',
             tooltip: option.tooltip || '',
             image: option.primary_image || '/placeholder.svg',
-            popular: option.is_most_popular === 1,
-            customInput: option.requires_input === 1,
+            popular: option.is_most_popular === true,
+            customInput: option.requires_input === true,
             selected: currentSelection.includes(parseInt(id))
           }))
         setVisibleOptions(fallbackOptions)

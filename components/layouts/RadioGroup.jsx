@@ -160,17 +160,17 @@ export function RadioGroup({ section, selections = {}, onSelect, productId }) {
                   </label>
                   <div className="flex gap-2">
                     <Input
-                      value={customValues[optionId] || ''}
+                      value={customValues[option.id] || ''}
                       onChange={(e) => setCustomValues({ 
                         ...customValues, 
-                        [optionId]: e.target.value 
+                        [option.id]: e.target.value 
                       })}
                       placeholder="Enter value..."
                       className="flex-1"
                     />
                     <Button
-                      onClick={() => handleCustomSubmit(optionId, customValues[optionId])}
-                      disabled={!customValues[optionId]?.trim()}
+                      onClick={() => handleCustomSubmit(option.id, customValues[option.id])}
+                      disabled={!customValues[option.id]?.trim()}
                     >
                       Save
                     </Button>

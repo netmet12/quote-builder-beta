@@ -1,6 +1,6 @@
 "use client"
 
-import { useSimpleQuote } from '../hooks/useSimpleQuote.js'
+import { useSupabaseQuote } from '../hooks/useSupabaseQuote.js'
 import { OptionGrid } from './layouts/OptionGrid.jsx'
 import { RadioGroup } from './layouts/RadioGroup.jsx'
 
@@ -225,7 +225,19 @@ function QuoteSummary({ quote }) {
 
 // Main Quote Builder Component
 export function SimpleQuoteBuilder() {
-  const quote = useSimpleQuote()
+  const quote = useSupabaseQuote()
+
+  // Show loading state while initializing
+  if (!quote.initialized) {
+    return (
+      <div className="min-h-screen bg-gray-50 flex items-center justify-center">
+        <div className="text-center">
+          <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600 mx-auto mb-4"></div>
+          <p className="text-gray-600">Loading product types...</p>
+        </div>
+      </div>
+    )
+  }
 
   // Show product selector if no product is selected
   if (!quote.selectedProductType) {
@@ -254,7 +266,16 @@ export function SimpleQuoteBuilder() {
       <div className="flex">
         {/* Content Area */}
         <div className="flex-1">
-          {quote.currentSection && (
+          {quote.loading && (
+            <div className="flex items-center justify-center p-8">
+              <div className="text-center">
+                <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600 mx-auto mb-4"></div>
+                <p className="text-gray-600">Loading section...</p>
+              </div>
+            </div>
+          )}
+          
+          {!quote.loading && quote.currentSection && (
             <div className="max-w-4xl mx-auto">
               <ProgressBar 
                 current={quote.currentStep}
@@ -290,6 +311,14 @@ export function SimpleQuoteBuilder() {
                   </ul>
                 </div>
               )}
+            </div>
+          )}
+          
+          {!quote.loading && !quote.currentSection && quote.visibleSections.length === 0 && (
+            <div className="flex items-center justify-center p-8">
+              <div className="text-center text-gray-600">
+                <p>No sections available for this product configuration.</p>
+              </div>
             </div>
           )}
         </div>
