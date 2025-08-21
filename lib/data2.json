@@ -1,0 +1,931 @@
+
+          "131": {
+            "product_id": 131,
+            "name": "3-3/4\"</strong> (w/ steel stud)",
+            "description": "",
+            "tooltip": "",
+            "is_most_popular": 0,
+            "requires_input": 0,
+            "primary_image": "/library/modules/upload/files/quote_product/131/3b9998b1b17b45811694d6e53c6bc828.jpg"
+          },
+          "437": {
+            "product_id": 437,
+            "name": "4-5/8\"</strong> (w/ steel stud)",
+            "description": "",
+            "tooltip": "",
+            "is_most_popular": 0,
+            "requires_input": 0,
+            "primary_image": "/library/modules/upload/files/quote_product/437/e4f4b531eb7b0f12012eeb24f1423331.jpg"
+          },
+          "438": {
+            "product_id": 438,
+            "name": "4-7/8\"</strong> (w/ steel stud)",
+            "description": "",
+            "tooltip": "",
+            "is_most_popular": 1,
+            "requires_input": 0,
+            "primary_image": "/library/modules/upload/files/quote_product/438/6cd3385e65c7178588fe58bf6d5132d9.jpg"
+          },
+          "439": {
+            "product_id": 439,
+            "name": "6-1/8\"</strong> (w/ steel stud)",
+            "description": "",
+            "tooltip": "",
+            "is_most_popular": 0,
+            "requires_input": 0,
+            "primary_image": "/library/modules/upload/files/quote_product/439/dc895785d6a51d98382e63cf1fe20087.jpg"
+          },
+          "132": {
+            "product_id": 132,
+            "name": "7-1/4\"</strong> (w/ steel stud)",
+            "description": "",
+            "tooltip": "",
+            "is_most_popular": 0,
+            "requires_input": 0,
+            "primary_image": "/library/modules/upload/files/quote_product/132/a9931d51fca8bb8131b9f1befb93175c.jpg"
+          },
+          "130": {
+            "product_id": 130,
+            "name": "Other",
+            "description": "",
+            "tooltip": "",
+            "is_most_popular": 0,
+            "requires_input": 1
+          }
+        },
+        "section_conditions": [
+          [
+            { "section": 1, "options": [44], "condition": "IN" },
+            { "section": 7, "options": [83], "condition": "IN" },
+            { "section": 14, "options": [122, 123], "condition": "NOT" }
+          ]
+        ],
+        "option_conditions": [
+          {
+            "params": [
+              { "section": 14, "options": [120] },
+              { "section": 8, "options": [85, 86, 87, 88, 89], "allow_null": 1 }
+            ],
+            "show": [126, 127, 128, 129, 130]
+          },
+          {
+            "params": [
+              { "section": 14, "options": [121] },
+              { "section": 8, "options": [85, 86, 87, 88, 89], "allow_null": 1 }
+            ],
+            "show": [131, 437, 438, 439, 132, 130]
+          },
+          {
+            "params": [
+              { "section": 14, "options": [120] },
+              { "section": 8, "options": [90] }
+            ],
+            "show": [127, 128, 129, 130]
+          },
+          {
+            "params": [
+              { "section": 14, "options": [121] },
+              { "section": 8, "options": [90] }
+            ],
+            "show": [131, 438, 439, 132, 130]
+          },
+          {
+            "params": [{ "section": 14, "options": [122, 123] }],
+            "show": [130]
+          }
+        ],
+        "title": "What is the Wall Thickness?",
+        "tooltip": "",
+        "order": [126, 127, 128, 129, 131, 437, 438, 439, 132, 130]
+      },
+      "17": {
+        "category_id": 25,
+        "columns": 3,
+        "options": {
+          "134": {
+            "product_id": 134,
+            "name": "Width x Height",
+            "description": "ex. 40\" x 86\" (to accommodate a 3'0\" x 7'0\" frame/door) - 2\" Standard Frame Face - Frame to Butt Wall ",
+            "tooltip": "",
+            "is_most_popular": 0,
+            "requires_input": 1
+          },
+          "135": {
+            "product_id": 135,
+            "name": "I'm Not Sure",
+            "description": "Must verify prior to ordering",
+            "tooltip": "",
+            "is_most_popular": 0,
+            "requires_input": 0
+          }
+        },
+        "section_conditions": [
+          [
+            { "section": 7, "options": [84], "condition": "IN" },
+            { "section": 14, "options": [120, 121, 123], "condition": "IN" },
+            { "section": 15, "options": [125], "condition": "NOT" }
+          ]
+        ],
+        "title": "What is the Rough Opening Size?",
+        "tooltip": "",
+        "order": [134, 135]
+      },
+      "18": {
+        "category_id": 26,
+        "columns": 2,
+        "options": {
+          "136": {
+            "product_id": 136,
+            "name": "Wire Anchor",
+            "description": "",
+            "tooltip": "",
+            "is_most_popular": 0,
+            "requires_input": 0,
+            "primary_image": "/library/modules/upload/files/quote_product/136/e7ce8470581963d5d88a99389f82367d.jpg"
+          },
+          "137": {
+            "product_id": 137,
+            "name": "T-Anchor",
+            "description": "",
+            "tooltip": "",
+            "is_most_popular": 0,
+            "requires_input": 0,
+            "primary_image": "/library/modules/upload/files/quote_product/137/ff63bf18f3da5d5f8374aabef67018c4.jpg"
+          }
+        },
+        "section_conditions": [
+          [{ "section": 14, "options": [122], "condition": "IN" }]
+        ],
+        "title": "What type of Anchor will be used?",
+        "tooltip": "",
+        "order": [136, 137]
+      },
+      "19": {
+        "category_id": 27,
+        "columns": 3,
+        "options": {
+          "138": {
+            "product_id": 138,
+            "name": "4-3/4\"",
+            "description": "",
+            "tooltip": "",
+            "is_most_popular": 0,
+            "requires_input": 0,
+            "primary_image": "/library/modules/upload/files/quote_product/138/5ac4a66a8bc73de1c86ecab15c3b589f.jpg"
+          },
+          "139": {
+            "product_id": 139,
+            "name": "5-3/4\"",
+            "description": "",
+            "tooltip": "",
+            "is_most_popular": 1,
+            "requires_input": 0,
+            "primary_image": "/library/modules/upload/files/quote_product/139/d8f18d4475a861200cdd690b1e33ced9.jpg"
+          },
+          "140": {
+            "product_id": 140,
+            "name": "6-3/4\"",
+            "description": "",
+            "tooltip": "",
+            "is_most_popular": 0,
+            "requires_input": 0,
+            "primary_image": "/library/modules/upload/files/quote_product/140/2f35417024a22a1a895c111f276de68a.jpg"
+          },
+          "141": {
+            "product_id": 141,
+            "name": "7-3/4\"",
+            "description": "",
+            "tooltip": "",
+            "is_most_popular": 0,
+            "requires_input": 0,
+            "primary_image": "/library/modules/upload/files/quote_product/141/84c271334b58cce261479e33c8cf632f.jpg"
+          },
+          "142": {
+            "product_id": 142,
+            "name": "8-3/4\"",
+            "description": "",
+            "tooltip": "",
+            "is_most_popular": 0,
+            "requires_input": 0,
+            "primary_image": "/library/modules/upload/files/quote_product/142/9d9de7c36fea00564de7aed3a70a3d95.jpg"
+          },
+          "143": {
+            "product_id": 143,
+            "name": "Other",
+            "description": "",
+            "tooltip": "",
+            "is_most_popular": 0,
+            "requires_input": 1
+          }
+        },
+        "section_conditions": [
+          [{ "section": 14, "options": [122, 123], "condition": "IN" }],
+          [
+            { "section": 7, "options": [84], "condition": "IN" },
+            { "section": 14, "options": [120, 121], "condition": "IN" }
+          ]
+        ],
+        "title": "What is the Jamb Depth of the Frame?",
+        "tooltip": "Jamb Depth is the overall jamb width, not to be confused with throat size. ",
+        "order": [138, 139, 140, 141, 142, 143]
+      },
+      "20": {
+        "category_id": 28,
+        "columns": 2,
+        "options": {
+          "144": {
+            "product_id": 144,
+            "name": "KD (3 Piece Knock Down)",
+            "description": "",
+            "tooltip": "",
+            "is_most_popular": 0,
+            "requires_input": 0,
+            "primary_image": "/library/modules/upload/files/quote_product/144/5a24b34fd39c79d00becd4a4403fb6d1.jpg"
+          },
+          "145": {
+            "product_id": 145,
+            "name": "Assembled and Welded",
+            "description": "",
+            "tooltip": "",
+            "is_most_popular": 0,
+            "requires_input": 0,
+            "primary_image": "/library/modules/upload/files/quote_product/145/d64dac43265a4e35cd3bc49442b701fa.jpg"
+          }
+        },
+        "section_conditions": [
+          [
+            { "section": 2, "options": [46], "condition": "IN" },
+            { "section": 7, "options": [84], "condition": "IN" },
+            { "section": 15, "options": [125], "condition": "IN" },
+            { "section": 16, "options": [437, 126], "condition": "NOT" }
+          ],
+          [
+            { "section": 2, "options": [46], "condition": "IN" },
+            { "section": 7, "options": [83], "condition": "IN" },
+            { "section": 15, "options": [125], "condition": "IN" },
+            { "section": 16, "options": [437, 126], "condition": "NOT" }
+          ],
+          [
+            { "section": 2, "options": [46], "condition": "IN" },
+            { "section": 7, "options": [84], "condition": "IN" },
+            { "section": 15, "options": [124], "condition": "IN" },
+            { "section": 16, "options": [437, 126], "condition": "NOT" }
+          ]
+        ],
+        "option_conditions": [
+          {
+            "params": [
+              { "section": 8, "options": [90] },
+              { "section": 14, "options": [120, 121] }
+            ],
+            "show": [145]
+          },
+          {
+            "params": [{ "section": 8, "options": [85, 86, 87, 88, 89] }],
+            "show": [144, 145]
+          },
+          {
+            "params": [{ "section": 14, "options": [122, 123] }],
+            "show": [144, 145]
+          }
+        ],
+        "title": "KD or Welded Frame?",
+        "tooltip": "",
+        "order": [144, 145]
+      },
+      "21": {
+        "category_id": 69,
+        "columns": 2,
+        "options": {
+          "361": {
+            "product_id": 361,
+            "name": "Ball Bearing Hinges",
+            "description": "(3) 4.5\" x 4.5\" hinges per door </br>\n(4) hinges for 8'0\" height doors\n",
+            "tooltip": "",
+            "is_most_popular": 1,
+            "requires_input": 0,
+            "primary_image": "/library/modules/upload/files/quote_product/361/4d19783e1ef6cd58b4d4c1031d8be858.jpg"
+          },
+          "362": {
+            "product_id": 362,
+            "name": "Continuous Gear Hinge",
+            "description": "extends the full height of door</br>\nMay require custom door w/ extended lead times",
+            "tooltip": "",
+            "is_most_popular": 0,
+            "requires_input": 0,
+            "primary_image": "/library/modules/upload/files/quote_product/362/7f55d396ee6ae0eebda3a9be88c19ed8.jpg"
+          }
+        },
+        "title": "Hang Door",
+        "tooltip": "",
+        "order": [361, 362]
+      },
+      "22": {
+        "category_id": 70,
+        "columns": 4,
+        "options": {
+          "363": {
+            "product_id": 363,
+            "name": "Lever",
+            "description": "",
+            "tooltip": "",
+            "is_most_popular": 0,
+            "requires_input": 0,
+            "primary_image": "/library/modules/upload/files/quote_product/363/7b30d2d7747f6a9b8b97d62a7f29be55.jpg"
+          },
+          "364": {
+            "product_id": 364,
+            "name": "Lever w/ Deadbolt",
+            "description": "",
+            "tooltip": "",
+            "is_most_popular": 0,
+            "requires_input": 0,
+            "primary_image": "/library/modules/upload/files/quote_product/364/8e758bb4662a0ab3d66b5c91cd6f804b.jpg"
+          },
+          "367": {
+            "product_id": 367,
+            "name": "Mortise Lock",
+            "description": "w/ sectional trim",
+            "tooltip": "",
+            "is_most_popular": 0,
+            "requires_input": 0,
+            "primary_image": "/library/modules/upload/files/quote_product/367/7f6d5204f7f7c6ee143fab02d6d36b29.jpg"
+          },
+          "368": {
+            "product_id": 368,
+            "name": "Panic Bar Exit Device",
+            "description": "",
+            "tooltip": "",
+            "is_most_popular": 0,
+            "requires_input": 0,
+            "primary_image": "/library/modules/upload/files/quote_product/368/5f91de9fdb9c05f98cad897b620ae0bb.jpg"
+          },
+          "369": {
+            "product_id": 369,
+            "name": "Schlage C0-100 Keypad Lock",
+            "description": "Standalone Electronic Lock (Schlage CO-100)",
+            "tooltip": "",
+            "is_most_popular": 0,
+            "requires_input": 0,
+            "primary_image": "/library/modules/upload/files/quote_product/369/5009041248c84e9b85d7c54515d69ead.jpg"
+          },
+          "370": {
+            "product_id": 370,
+            "name": "Push / Pull Set",
+            "description": "",
+            "tooltip": "",
+            "is_most_popular": 0,
+            "requires_input": 0,
+            "primary_image": "/library/modules/upload/files/quote_product/370/7b8b287ff619236db4aa2fa70a648f12.jpg"
+          },
+          "371": {
+            "product_id": 371,
+            "name": "Push / Pull Set w/ Deadbolt",
+            "description": "",
+            "tooltip": "",
+            "is_most_popular": 0,
+            "requires_input": 0,
+            "primary_image": "/library/modules/upload/files/quote_product/371/2d657ce4638b4c4dff457faed1df2450.png"
+          },
+          "365": {
+            "product_id": 365,
+            "name": "Knob",
+            "description": "(Non ADA Compliant)",
+            "tooltip": "",
+            "is_most_popular": 0,
+            "requires_input": 0,
+            "primary_image": "/library/modules/upload/files/quote_product/365/29d64eac041d402b9f2287638b1d4512.jpg"
+          },
+          "366": {
+            "product_id": 366,
+            "name": "Knob w/ Deadbolt",
+            "description": "(Non ADA Compliant)",
+            "tooltip": "",
+            "is_most_popular": 0,
+            "requires_input": 0,
+            "primary_image": "/library/modules/upload/files/quote_product/366/4624aedbfec10f3fa7272bb3f607ad6b.jpg"
+          },
+          "500": {
+            "product_id": 500,
+            "name": "Alarm Lock DL2700 Keypad Lock",
+            "description": "Standalone Electronic Lock",
+            "tooltip": "",
+            "is_most_popular": 0,
+            "requires_input": 0,
+            "primary_image": "/library/modules/upload/files/quote_product/500/4717871975f186e83a524149dfab0da5.jpg"
+          },
+          "452": {
+            "product_id": 452,
+            "name": "No Latch Option",
+            "description": "I will provide latching device",
+            "tooltip": "",
+            "is_most_popular": 0,
+            "requires_input": 0,
+            "primary_image": "/library/modules/upload/files/quote_product/452/473d05edbb3f46311e391c281e428460.jpg"
+          }
+        },
+        "section_conditions": [
+          [{ "section": 6, "options": [76, 77, 78, 79], "condition": "IN" }],
+          [{ "section": 5, "options": [72, 73, 74, 75], "condition": "IN" }]
+        ],
+        "option_conditions": [
+          {
+            "params": [{ "section": 8, "options": [86, 87, 88, 89, 90] }],
+            "show": [363, 364, 365, 366, 367, 368, 369, 500, 452]
+          },
+          {
+            "params": [{ "section": 8, "options": [85] }],
+            "show": [363, 364, 365, 366, 367, 368, 369, 370, 371, 500, 452]
+          }
+        ],
+        "title": "Latch Door",
+        "tooltip": "",
+        "order": [363, 364, 367, 368, 369, 370, 371, 365, 366, 500, 452]
+      },
+      "23": {
+        "category_id": 71,
+        "columns": 3,
+        "options": {
+          "372": {
+            "product_id": 372,
+            "name": "Entry",
+            "description": "Key outside, push button or turn on inside.",
+            "tooltip": "",
+            "is_most_popular": 0,
+            "requires_input": 0,
+            "primary_image": "/library/modules/upload/files/quote_product/372/45f7ddb3f2194ca38072ba8a7a59b2aa.jpg"
+          },
+          "373": {
+            "product_id": 373,
+            "name": "Storeroom",
+            "description": "Key outside, blank inside. Outside always locked.",
+            "tooltip": "",
+            "is_most_popular": 0,
+            "requires_input": 0,
+            "primary_image": "/library/modules/upload/files/quote_product/373/847a2a9fe8e0c0bcfad836add3059e69.jpg"
+          },
+          "374": {
+            "product_id": 374,
+            "name": "Classroom",
+            "description": "Key outside, blank inside. Key unlocks/locks outside.",
+            "tooltip": "",
+            "is_most_popular": 0,
+            "requires_input": 0,
+            "primary_image": "/library/modules/upload/files/quote_product/374/082e8bf46ee568fdbce395809cbf8ed2.jpg"
+          },
+          "375": {
+            "product_id": 375,
+            "name": "Privacy",
+            "description": "Bath lock - Push button lock on inside, emergency release outside. Non-keyed. ",
+            "tooltip": "",
+            "is_most_popular": 0,
+            "requires_input": 0,
+            "primary_image": "/library/modules/upload/files/quote_product/375/22b943c108bcb46e72ed908784528867.jpg"
+          },
+          "376": {
+            "product_id": 376,
+            "name": "Passage",
+            "description": "No key or button on either side, always unlocked.",
+            "tooltip": "",
+            "is_most_popular": 0,
+            "requires_input": 0,
+            "primary_image": "/library/modules/upload/files/quote_product/376/33921d9f1122e89df12b7d716b65f5df.jpg"
+          },
+          "480": {
+            "product_id": 480,
+            "name": "CO-100-CY-70-KP-RHO",
+            "description": "Storeroom Function",
+            "tooltip": "",
+            "is_most_popular": 0,
+            "requires_input": 0,
+            "primary_image": "/library/modules/upload/files/quote_product/480/c1aa9f81003921b625afe5986f3c6f26.jpg"
+          },
+          "479": {
+            "product_id": 479,
+            "name": "CO-100-CY-50-KP-RHO",
+            "description": "Office/Classroom Function",
+            "tooltip": "",
+            "is_most_popular": 0,
+            "requires_input": 0,
+            "primary_image": "/library/modules/upload/files/quote_product/479/651952d50009fd33b37e3aa232b5ce69.jpg"
+          }
+        },
+        "section_conditions": [
+          [
+            {
+              "section": 22,
+              "options": [363, 364, 365, 366, 369],
+              "condition": "IN"
+            }
+          ]
+        ],
+        "option_conditions": [
+          {
+            "params": [{ "section": 22, "options": [369] }],
+            "show": [480, 479]
+          },
+          {
+            "params": [
+              {
+                "section": 22,
+                "options": [363, 364, 367, 368, 370, 371, 365, 366, 452]
+              }
+            ],
+            "show": [372, 373, 374, 375, 376]
+          }
+        ],
+        "title": "Lock Function",
+        "tooltip": "",
+        "order": [372, 373, 374, 375, 376, 480, 479]
+      },
+      "24": {
+        "category_id": 98,
+        "columns": 3,
+        "options": {
+          "488": {
+            "product_id": 488,
+            "name": "Entry w/ Deadbolt",
+            "description": "ANSI Function F-20</strong> Latch bolt operated by lever from either side, except when outside lever is made inoperative by button in face. Deadbolt operated by key outside or turn inside. Turning inside lever retracts both bolts. Deadlocking latch. ",
+            "tooltip": "",
+            "is_most_popular": 0,
+            "requires_input": 0,
+            "primary_image": "/library/modules/upload/files/quote_product/488/24b7a040a36e512d1bea2e4cfd35ba53.jpg"
+          },
+          "489": {
+            "product_id": 489,
+            "name": "Office / Entry ",
+            "description": "ANSI Function F-04</strong> Latch bolt operated by lever from either side except when outside lever is made inoperative by buttons in face. When outside lever is locked, latch bolt is retracted by key from outside or by operating inside lever. Auxiliary dead latch. Outside lever is unlocked by button on face.",
+            "tooltip": "",
+            "is_most_popular": 0,
+            "requires_input": 0,
+            "primary_image": "/library/modules/upload/files/quote_product/489/51b92dbf4ecedc90147e65830c5a6b3c.jpg"
+          },
+          "490": {
+            "product_id": 490,
+            "name": "Storeroom",
+            "description": "ANSI Function F-07</strong> Latch bolt operated by key from outside or by operating inside lever. Outside lever is always locked. Auxiliary dead latch.",
+            "tooltip": "",
+            "is_most_popular": 0,
+            "requires_input": 0,
+            "primary_image": "/library/modules/upload/files/quote_product/490/dc1cd45d56ec6c13395bd0540ecd1a36.jpg"
+          },
+          "491": {
+            "product_id": 491,
+            "name": "Classroom",
+            "description": "ANSI Function F-05</strong> Deadlocking latch bolt by lever. Outside lever locked by key outside. Inside lever always free for immediate exit.",
+            "tooltip": "",
+            "is_most_popular": 0,
+            "requires_input": 0,
+            "primary_image": "/library/modules/upload/files/quote_product/491/166b05c2330ac890ea790300c8c2187d.jpg"
+          },
+          "492": {
+            "product_id": 492,
+            "name": "Privacy",
+            "description": "ANSI Function F-19</strong> Latch bolt operated by lever from either side. Deadbolt operated by turn from inside and by emergency release from outside. ",
+            "tooltip": "",
+            "is_most_popular": 0,
+            "requires_input": 0,
+            "primary_image": "/library/modules/upload/files/quote_product/492/bf60c10e0b117cacaa5121864f385451.jpg"
+          },
+          "493": {
+            "product_id": 493,
+            "name": "Passage",
+            "description": "ANSI Function F-01</strong> Latch bolt operated by lever from either side at all times. Never locked. ",
+            "tooltip": "",
+            "is_most_popular": 0,
+            "requires_input": 0,
+            "primary_image": "/library/modules/upload/files/quote_product/493/886d7d6b949b9aa6e18ac9a47037fbd7.jpg"
+          }
+        },
+        "section_conditions": [
+          [{ "section": 22, "options": [367], "condition": "IN" }]
+        ],
+        "title": "Mortise Lock Function",
+        "tooltip": "",
+        "order": [488, 489, 490, 491, 492, 493]
+      },
+      "25": {
+        "category_id": 72,
+        "columns": 4,
+        "options": {
+          "377": {
+            "product_id": 377,
+            "name": "Single Cylinder",
+            "description": "key/thumbturn",
+            "tooltip": "",
+            "is_most_popular": 1,
+            "requires_input": 0,
+            "primary_image": "/library/modules/upload/files/quote_product/377/855e8308d0d082a44e19b3ab93b0140e.jpg"
+          },
+          "378": {
+            "product_id": 378,
+            "name": "Double Cylinder",
+            "description": "key both sides (Caution: Life safety hazard in times of emergency. Not for egress doors.)",
+            "tooltip": "",
+            "is_most_popular": 0,
+            "requires_input": 0,
+            "primary_image": "/library/modules/upload/files/quote_product/378/3660b629f39498f5f5eac021858a98d0.jpg"
+          },
+          "379": {
+            "product_id": 379,
+            "name": "Classroom",
+            "description": "bolt thrown or retracted by key outside - inside turn will retract bolt only",
+            "tooltip": "",
+            "is_most_popular": 0,
+            "requires_input": 0,
+            "primary_image": "/library/modules/upload/files/quote_product/379/ad6f239e3637f93b4759d1c4b4485f60.jpg"
+          },
+          "380": {
+            "product_id": 380,
+            "name": "Indicator",
+            "description": "thumbturn inside, in use/vacant indicator outside",
+            "tooltip": "",
+            "is_most_popular": 0,
+            "requires_input": 0,
+            "primary_image": "/library/modules/upload/files/quote_product/380/11e7758d2367e4a28cbb012df3e7e5b4.jpg"
+          }
+        },
+        "section_conditions": [
+          [{ "section": 22, "options": [364, 366, 371], "condition": "IN" }]
+        ],
+        "title": "Deadbolt Type",
+        "tooltip": "",
+        "order": [377, 378, 379, 380]
+      },
+      "26": {
+        "category_id": 73,
+        "columns": 3,
+        "options": {
+          "381": {
+            "product_id": 381,
+            "name": "None - Exit Only",
+            "description": "No entrance from outside",
+            "tooltip": "",
+            "is_most_popular": 0,
+            "requires_input": 0,
+            "primary_image": "/library/modules/upload/files/quote_product/381/1ab4aa69097058073e8598c071f62c82.jpg"
+          },
+          "382": {
+            "product_id": 382,
+            "name": "Lever Trim",
+            "description": "available with select light/medium duty devices only",
+            "tooltip": "",
+            "is_most_popular": 0,
+            "requires_input": 0,
+            "primary_image": "/library/modules/upload/files/quote_product/382/2b871d29dad578429bd955e315d31e64.jpg"
+          },
+          "386": {
+            "product_id": 386,
+            "name": "Escutcheon Lever",
+            "description": "Heavy Duty Lever",
+            "tooltip": "",
+            "is_most_popular": 1,
+            "requires_input": 0,
+            "primary_image": "/library/modules/upload/files/quote_product/386/8fbad61c1148d6c32b8e83e51815a6f4.png"
+          },
+          "383": {
+            "product_id": 383,
+            "name": "Night Latch Pull w/ Cylinder",
+            "description": "",
+            "tooltip": "",
+            "is_most_popular": 0,
+            "requires_input": 0,
+            "primary_image": "/library/modules/upload/files/quote_product/383/713422284c170b5c910374b641449fcf.png"
+          },
+          "384": {
+            "product_id": 384,
+            "name": "Thumbpiece Pull w/ Cylinder",
+            "description": "(Non ADA Compliant) ",
+            "tooltip": "",
+            "is_most_popular": 0,
+            "requires_input": 0,
+            "primary_image": "/library/modules/upload/files/quote_product/384/addfcb9fdf017c13e2e8c403d8242cb2.png"
+          },
+          "385": {
+            "product_id": 385,
+            "name": "Standalone Electronic Keypad",
+            "description": "",
+            "tooltip": "",
+            "is_most_popular": 0,
+            "requires_input": 0,
+            "primary_image": "/library/modules/upload/files/quote_product/385/05b03a7d01da8c08d7194b8d5ebbea27.jpg"
+          }
+        },
+        "section_conditions": [
+          [{ "section": 22, "options": [368], "condition": "IN" }],
+          [{ "section": 6, "options": [80, 81], "condition": "IN" }]
+        ],
+        "title": "Outside Exit Device Trim",
+        "tooltip": "Note: Trim designs vary, depending on device brand and model. ",
+        "order": [381, 382, 386, 383, 384, 385]
+      },
+      "27": {
+        "category_id": 97,
+        "columns": 3,
+        "options": {
+          "485": {
+            "product_id": 485,
+            "name": "Entry",
+            "description": "ANSI Function: 08 - Key locks and unlocks lever. Operates as Classroom function. ",
+            "tooltip": "",
+            "is_most_popular": 1,
+            "requires_input": 0,
+            "primary_image": "/library/modules/upload/files/quote_product/485/d94936385bb35f2e942788b505b2a85a.jpg"
+          },
+          "486": {
+            "product_id": 486,
+            "name": "Night Latch (Storeroom)",
+            "description": "ANSI Function: 09 - Lever is always locked. Key retracts latch bolt. ",
+            "tooltip": "",
+            "is_most_popular": 0,
+            "requires_input": 0,
+            "primary_image": "/library/modules/upload/files/quote_product/486/deda522598f6894e3dd50b26681cbfc9.jpg"
+          },
+          "487": {
+            "product_id": 487,
+            "name": "Passage",
+            "description": "ANSI Function: 14 - Lever always unlocked - always operable and free.",
+            "tooltip": "",
+            "is_most_popular": 0,
+            "requires_input": 0,
+            "primary_image": "/library/modules/upload/files/quote_product/487/df78cc1600cd347814e4ae8c65e13037.jpg"
+          }
+        },
+        "section_conditions": [
+          [
+            { "section": 22, "options": [368], "condition": "IN" },
+            { "section": 26, "options": [382, 386], "condition": "IN" }
+          ]
+        ],
+        "title": "Exit Device Trim Function",
+        "tooltip": "Lever design varies, depending on device brand and model. ",
+        "order": [485, 486, 487]
+      },
+      "28": {
+        "category_id": 74,
+        "columns": 4,
+        "options": {
+          "389": {
+            "product_id": 389,
+            "name": "Door Closer",
+            "description": "regular, top jamb and/or parallel arm mount",
+            "tooltip": "",
+            "is_most_popular": 1,
+            "requires_input": 0,
+            "primary_image": "/library/modules/upload/files/quote_product/389/f5289d9e88adfc8d2b584cdabf24d645.jpg"
+          },
+          "390": {
+            "product_id": 390,
+            "name": "Door Closer w/ Hold Open Arm",
+            "description": "regular, top jamb and/or parallel arm mount",
+            "tooltip": "",
+            "is_most_popular": 0,
+            "requires_input": 0,
+            "primary_image": "/library/modules/upload/files/quote_product/390/ed1777195278be206a318357e96cb3ad.jpg"
+          },
+          "391": {
+            "product_id": 391,
+            "name": "Spring Hinges",
+            "description": "not recommended for ADA compliant applications or high traffic openings. only for fire doors up to 3'0\" x 7'0\"",
+            "tooltip": "",
+            "is_most_popular": 0,
+            "requires_input": 0,
+            "primary_image": "/library/modules/upload/files/quote_product/391/6b0feda61829cfcc522d25c466611bf5.jpg"
+          },
+          "453": {
+            "product_id": 453,
+            "name": "No Closing Device",
+            "description": "",
+            "tooltip": "",
+            "is_most_popular": 0,
+            "requires_input": 0,
+            "primary_image": "/library/modules/upload/files/quote_product/453/2f4a0e50ce8b5820fb62dc1ce1118fb5.jpg"
+          }
+        },
+        "section_conditions": [
+          [{ "section": 6, "options": [76, 77, 78, 79], "condition": "IN" }],
+          [{ "section": 5, "options": [72, 73, 74, 75], "condition": "IN" }]
+        ],
+        "option_conditions": [
+          {
+            "params": [
+              { "section": 21, "options": [361] },
+              { "section": 8, "options": [86, 87, 88, 89, 90] },
+              {
+                "section": 3,
+                "options": [48, 49, 50, 51, 52, 53, 58, 59, 60, 61, 62, 63]
+              },
+              { "section": 4, "options": [68, 69, 71] }
+            ],
+            "show": [389, 391]
+          },
+          {
+            "params": [
+              { "section": 21, "options": [361] },
+              { "section": 8, "options": [86, 87, 88, 89, 90] },
+              { "section": 3, "options": [54, 55, 56, 57, 64, 65, 66, 67] }
+            ],
+            "show": [389]
+          },
+          {
+            "params": [
+              { "section": 21, "options": [361] },
+              { "section": 8, "options": [86, 87, 88, 89, 90] },
+              { "section": 4, "options": [70] }
+            ],
+            "show": [389]
+          },
+          {
+            "params": [
+              { "section": 21, "options": [361] },
+              { "section": 8, "options": [85] }
+            ],
+            "show": [389, 390, 391, 453]
+          },
+          {
+            "params": [
+              { "section": 21, "options": [362] },
+              { "section": 8, "options": [85] }
+            ],
+            "show": [389, 390, 453]
+          },
+          {
+            "params": [
+              { "section": 21, "options": [362] },
+              { "section": 8, "options": [86, 87, 88, 89, 90] }
+            ],
+            "show": [389]
+          }
+        ],
+        "title": "Control Door",
+        "tooltip": "We strongly recommend door closers over spring hinges, as they do a much better job of closing, and controlling a door. ",
+        "order": [389, 390, 391, 453]
+      },
+      "29": {
+        "category_id": 75,
+        "columns": 4,
+        "multi_select": 1,
+        "options": {
+          "392": {
+            "product_id": 392,
+            "name": "Kickplate",
+            "description": "10\" H x -2\" of door width",
+            "tooltip": "",
+            "is_most_popular": 0,
+            "requires_input": 0,
+            "primary_image": "/library/modules/upload/files/quote_product/392/e9d7fd96a6e94cb7202149627f9198b8.jpg"
+          },
+          "393": {
+            "product_id": 393,
+            "name": "Threshold",
+            "description": "1/2\" H (ADA Compliant) ",
+            "tooltip": "",
+            "is_most_popular": 1,
+            "requires_input": 0,
+            "primary_image": "/library/modules/upload/files/quote_product/393/434f24d7f83970336f4cd5eda5c500bc.jpg"
+          },
+          "394": {
+            "product_id": 394,
+            "name": "Neoprene Door Sweep",
+            "description": "for use with threshold ",
+            "tooltip": "",
+            "is_most_popular": 1,
+            "requires_input": 0,
+            "primary_image": "/library/modules/upload/files/quote_product/394/15250e29746f63c4b17e8fb231b07d4b.jpg"
+          },
+          "395": {
+            "product_id": 395,
+            "name": "Brush Door Sweep (TD-SWB)",
+            "description": "for use with threshold ",
+            "tooltip": "",
+            "is_most_popular": 0,
+            "requires_input": 0,
+            "primary_image": "/library/modules/upload/files/quote_product/395/5e6e582035c4cca49315db34c68691cc.jpg"
+          },
+          "396": {
+            "product_id": 396,
+            "name": "Weatherstrip",
+            "description": "Screw-on Jamb Perimeter Gasketing",
+            "tooltip": "",
+            "is_most_popular": 1,
+            "requires_input": 0,
+            "primary_image": "/library/modules/upload/files/quote_product/396/f9c9400387610a41dd9daf7b39743509.jpg"
+          },
+          "397": {
+            "product_id": 397,
+            "name": "Weatherstrip (S88)",
+            "description": "Adhesive Gasketing",
+            "tooltip": "",
+            "is_most_popular": 0,
+            "requires_input": 0,
+            "primary_image": "/library/modules/upload/files/quote_product/397/da6789b0f853d09eedefc3949f608b99.jpg"
+          },
+          "398": {
+            "product_id": 398,
+            "name": "Weatherstrip (S773)",
+            "description": "Triple Fin Adhesive Gasketing",
+            "tooltip": "",
+            "is_most_popular": 0,
+            "requires_input": 0,
+            "primary_image": "/library/modules/upload/files/quote_product/398/863672bd663e3ef90bea3bfdbdc3af35.jpg"
+          },

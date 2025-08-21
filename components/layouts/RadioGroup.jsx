@@ -41,19 +41,30 @@ function Input({ value, onChange, placeholder, className = "" }) {
   )
 }
 
-export function RadioGroup({ section, selections = {}, onSelect }) {
+export function RadioGroup({ section, selections = {}, onSelect, productId }) {
   const [customValues, setCustomValues] = useState({})
   
   if (!section) return null
 
   const currentSelection = selections[section.id] || []
   const selectedValue = currentSelection[0] // Radio groups are single-select
+  
+  // Use the same option formatting as OptionGrid for consistency
   const options = Object.entries(section.options || {})
     .sort((a, b) => {
       const aIndex = section.order?.indexOf(parseInt(a[0])) ?? 999
       const bIndex = section.order?.indexOf(parseInt(b[0])) ?? 999
       return aIndex - bIndex
     })
+    .map(([id, option]) => ({
+      id: parseInt(id),
+      name: option.name,
+      description: option.description || '',
+      tooltip: option.tooltip || '',
+      image: option.primary_image || '/placeholder.svg',
+      popular: option.is_most_popular === 1,
+      customInput: option.requires_input === 1
+    }))
 
   const handleOptionSelect = (optionId, option) => {
     if (option.customInput) {
@@ -80,26 +91,23 @@ export function RadioGroup({ section, selections = {}, onSelect }) {
         {section.tooltip && (
           <p className="text-gray-600 text-sm">{section.tooltip}</p>
         )}
-        {section.required && (
-          <Badge className="mt-2 bg-blue-100 text-blue-800">Required</Badge>
-        )}
       </div>
 
       {/* Radio Options */}
       <div className="space-y-3">
-        {options.map(([optionId, option]) => {
-          const isSelected = selectedValue === parseInt(optionId)
+        {options.map((option) => {
+          const isSelected = selectedValue === option.id
           const showCustomInput = option.customInput && isSelected
 
           return (
-            <div key={optionId} className="space-y-3">
+            <div key={option.id} className="space-y-3">
               <div
                 className={`border rounded-lg p-4 cursor-pointer transition-all duration-200 ${
                   isSelected 
                     ? 'border-blue-500 bg-blue-50 shadow-md' 
                     : 'border-gray-200 hover:bg-gray-50 hover:border-gray-300'
                 }`}
-                onClick={() => !option.customInput && handleOptionSelect(optionId, option)}
+                onClick={() => !option.customInput && handleOptionSelect(option.id, option)}
               >
                 <div className="flex items-center space-x-3">
                   {/* Radio Button */}
@@ -124,6 +132,9 @@ export function RadioGroup({ section, selections = {}, onSelect }) {
                     {option.description && (
                       <p className="text-sm text-gray-600 mt-1">{option.description}</p>
                     )}
+                    {option.tooltip && (
+                      <p className="text-xs text-gray-500 mt-1 italic">{option.tooltip}</p>
+                    )}
                   </div>
 
                   {/* Custom Input Button */}
@@ -131,7 +142,7 @@ export function RadioGroup({ section, selections = {}, onSelect }) {
                     <Button 
                       onClick={(e) => {
                         e.stopPropagation()
-                        handleOptionSelect(optionId, option)
+                        handleOptionSelect(option.id, option)
                       }}
                       className="bg-gray-600 hover:bg-gray-700"
                     >
@@ -184,13 +195,9 @@ export function RadioGroup({ section, selections = {}, onSelect }) {
             <span className="text-green-600 font-medium">
               ✓ Selection made - you can continue to the next step
             </span>
-          ) : section.required ? (
+          ) : (
             <span className="text-amber-600 font-medium">
               Please make a selection to continue
-            </span>
-          ) : (
-            <span className="text-gray-500">
-              Optional step - you can skip or make a selection
             </span>
           )}
         </p>

@@ -1,0 +1,870 @@
+      "7": {
+        "category_id": 15,
+        "columns": 2,
+        "options": {
+          "83": {
+            "product_id": 83,
+            "name": "Interior ",
+            "description": "(inside of building)",
+            "tooltip": "",
+            "is_most_popular": 0,
+            "requires_input": 0,
+            "primary_image": "/library/modules/upload/files/quote_product/83/2d3b7a527d68479b5b88ae377b0d0966.jpg"
+          },
+          "84": {
+            "product_id": 84,
+            "name": "Exterior ",
+            "description": "(building to outside)",
+            "tooltip": "",
+            "is_most_popular": 0,
+            "requires_input": 0,
+            "primary_image": "/library/modules/upload/files/quote_product/84/07a6c2f66cba9abbb9875aaef90718de.jpg"
+          }
+        },
+        "title": "Interior or Exterior Application",
+        "tooltip": "",
+        "order": [83, 84]
+      },
+      "8": {
+        "category_id": 16,
+        "columns": 3,
+        "options": {
+          "85": {
+            "product_id": 85,
+            "name": "No",
+            "description": "",
+            "tooltip": "",
+            "is_most_popular": 0,
+            "requires_input": 0,
+            "primary_image": "/library/modules/upload/files/quote_product/85/5a1d96ebeeff5f71fe4036f63299a108.jpg"
+          },
+          "86": {
+            "product_id": 86,
+            "name": "20 Minute",
+            "description": "",
+            "tooltip": "",
+            "is_most_popular": 0,
+            "requires_input": 0,
+            "primary_image": "/library/modules/upload/files/quote_product/86/079bfa68d44dbabe56bbc463a110d6b5.jpg"
+          },
+          "87": {
+            "product_id": 87,
+            "name": "45 Minute",
+            "description": "",
+            "tooltip": "",
+            "is_most_popular": 0,
+            "requires_input": 0,
+            "primary_image": "/library/modules/upload/files/quote_product/87/8b3514d944a40adee0207cc3e0aa3e57.jpg"
+          },
+          "88": {
+            "product_id": 88,
+            "name": "60 Minute",
+            "description": "",
+            "tooltip": "",
+            "is_most_popular": 0,
+            "requires_input": 0,
+            "primary_image": "/library/modules/upload/files/quote_product/88/9b0f58e1d915f749f5363e7ff9e782f3.jpg"
+          },
+          "89": {
+            "product_id": 89,
+            "name": "90 Minute",
+            "description": "",
+            "tooltip": "",
+            "is_most_popular": 0,
+            "requires_input": 0,
+            "primary_image": "/library/modules/upload/files/quote_product/89/a635c1f24629ac68061443965f50e8eb.jpg"
+          },
+          "90": {
+            "product_id": 90,
+            "name": "3 Hour",
+            "description": "",
+            "tooltip": "",
+            "is_most_popular": 0,
+            "requires_input": 0,
+            "primary_image": "/library/modules/upload/files/quote_product/90/1b3837cf54183701c6526f3ac3192c54.jpg"
+          }
+        },
+        "section_conditions": [
+          [
+            { "section": 7, "options": [83], "condition": "IN" },
+            { "section": 6, "options": [82], "condition": "NOT" }
+          ]
+        ],
+        "title": "Does this door need to be Fire-Rated?",
+        "tooltip": "Only select fire-rated, if required by code. Non-rated doors are made of the same construction and are less expensive. ",
+        "order": [85, 86, 87, 88, 89, 90]
+      },
+      "9": {
+        "category_id": 21,
+        "columns": 4,
+        "options": {
+          "112": {
+            "product_id": 112,
+            "name": "Steelcraft",
+            "description": "for 6' 8\" doors",
+            "tooltip": "",
+            "is_most_popular": 0,
+            "requires_input": 0,
+            "primary_image": "/library/modules/upload/files/quote_product/112/5d7ccd970e2b1489bb4d3df26a5b7657.jpg"
+          },
+          "113": {
+            "product_id": 113,
+            "name": "Ceco",
+            "description": "for 6' 8\" doors",
+            "tooltip": "",
+            "is_most_popular": 0,
+            "requires_input": 0,
+            "primary_image": "/library/modules/upload/files/quote_product/113/c7e3af4b754f3e333d6553b2e699dbf0.jpg"
+          },
+          "114": {
+            "product_id": 114,
+            "name": "Curries",
+            "description": "for 6' 8\" doors",
+            "tooltip": "",
+            "is_most_popular": 0,
+            "requires_input": 0,
+            "primary_image": "/library/modules/upload/files/quote_product/114/3daeaae0d0835029a7c3462311ff9649.jpg"
+          },
+          "115": {
+            "product_id": 115,
+            "name": "Mesker",
+            "description": "for 6' 8\" doors",
+            "tooltip": "",
+            "is_most_popular": 0,
+            "requires_input": 0,
+            "primary_image": "/library/modules/upload/files/quote_product/115/43ae7d8ae973f8eef8257e2532ee6ad7.jpg"
+          },
+          "116": {
+            "product_id": 116,
+            "name": "Pioneer",
+            "description": "for 6' 8\" doors",
+            "tooltip": "",
+            "is_most_popular": 0,
+            "requires_input": 0,
+            "primary_image": "/library/modules/upload/files/quote_product/116/1a1d5353cf79d84d6b868adc8781206d.jpg"
+          },
+          "425": {
+            "product_id": 425,
+            "name": "Steelcraft",
+            "description": "for 7' 0\" doors",
+            "tooltip": "",
+            "is_most_popular": 0,
+            "requires_input": 0,
+            "primary_image": "/library/modules/upload/files/quote_product/425/f31e2988ec88103651ea4a92ad566de8.jpg"
+          },
+          "117": {
+            "product_id": 117,
+            "name": "Republic ",
+            "description": "for 7' 0\" doors (old locations - prior to 7/15/2015)",
+            "tooltip": "",
+            "is_most_popular": 0,
+            "requires_input": 0,
+            "primary_image": "/library/modules/upload/files/quote_product/117/63e422b65ff16baaa24b6a5609726bf5.jpg"
+          },
+          "426": {
+            "product_id": 426,
+            "name": "Ceco",
+            "description": "for 7' 0\" doors",
+            "tooltip": "",
+            "is_most_popular": 0,
+            "requires_input": 0,
+            "primary_image": "/library/modules/upload/files/quote_product/426/661dee8b46a8b1c3de396ac464098b56.jpg"
+          },
+          "427": {
+            "product_id": 427,
+            "name": "Curries",
+            "description": "for 7' 0\" doors",
+            "tooltip": "",
+            "is_most_popular": 0,
+            "requires_input": 0,
+            "primary_image": "/library/modules/upload/files/quote_product/427/82fe2bf4118717b820ea071d4c860ba5.jpg"
+          },
+          "428": {
+            "product_id": 428,
+            "name": "Mesker",
+            "description": "for 7' 0\" doors",
+            "tooltip": "",
+            "is_most_popular": 0,
+            "requires_input": 0,
+            "primary_image": "/library/modules/upload/files/quote_product/428/a8ed1426afa1daade321a31a8bc4bb34.jpg"
+          },
+          "429": {
+            "product_id": 429,
+            "name": "Pioneer",
+            "description": "for 7' 0\" doors",
+            "tooltip": "",
+            "is_most_popular": 0,
+            "requires_input": 0,
+            "primary_image": "/library/modules/upload/files/quote_product/429/0b9f39f3c2ff50faf289ed6243350555.jpg"
+          },
+          "430": {
+            "product_id": 430,
+            "name": "Steelcraft",
+            "description": "for 8' 0\" doors",
+            "tooltip": "",
+            "is_most_popular": 0,
+            "requires_input": 0,
+            "primary_image": "/library/modules/upload/files/quote_product/430/88fa2e9001bbe37f0f5cfbd4686b954b.jpg"
+          },
+          "431": {
+            "product_id": 431,
+            "name": "DKS",
+            "description": "for 8' 0\" doors",
+            "tooltip": "",
+            "is_most_popular": 0,
+            "requires_input": 0,
+            "primary_image": "/library/modules/upload/files/quote_product/431/3a9a3ee0631d20af4c98c0071ce2dc9e.jpg"
+          },
+          "432": {
+            "product_id": 432,
+            "name": "Ceco",
+            "description": "for 8' 0\" doors",
+            "tooltip": "",
+            "is_most_popular": 0,
+            "requires_input": 0,
+            "primary_image": "/library/modules/upload/files/quote_product/432/546a67706c3dc37f591dcdbce3a9305b.jpg"
+          },
+          "433": {
+            "product_id": 433,
+            "name": "Curries",
+            "description": "for 8' 0\" doors",
+            "tooltip": "",
+            "is_most_popular": 0,
+            "requires_input": 0,
+            "primary_image": "/library/modules/upload/files/quote_product/433/87984807ad2225a973216c2058e27323.jpg"
+          },
+          "435": {
+            "product_id": 435,
+            "name": "Mesker",
+            "description": "for 8' 0\" doors",
+            "tooltip": "",
+            "is_most_popular": 0,
+            "requires_input": 0,
+            "primary_image": "/library/modules/upload/files/quote_product/435/4847fd65b4185841040c082734711575.jpg"
+          },
+          "436": {
+            "product_id": 436,
+            "name": "Pioneer",
+            "description": "for 8' 0\" doors",
+            "tooltip": "",
+            "is_most_popular": 0,
+            "requires_input": 0,
+            "primary_image": "/library/modules/upload/files/quote_product/436/3b1b6e5a8d3e0621dbdd3f1043f4c19b.jpg"
+          },
+          "119": {
+            "product_id": 119,
+            "name": "Other",
+            "description": "",
+            "tooltip": "",
+            "is_most_popular": 0,
+            "requires_input": 1
+          }
+        },
+        "section_conditions": [
+          [{ "section": 1, "options": [45], "condition": "IN" }]
+        ],
+        "option_conditions": [
+          {
+            "params": [{ "section": 4, "options": [68] }],
+            "show": [112, 113, 114, 115, 116]
+          },
+          {
+            "params": [{ "section": 4, "options": [69] }],
+            "show": [425, 426, 427, 428, 429, 117]
+          },
+          {
+            "params": [{ "section": 4, "options": [70] }],
+            "show": [430, 431, 432, 433, 435, 436]
+          },
+          { "params": [{ "section": 4, "options": [71] }], "show": [119] }
+        ],
+        "title": "Select Door Hinge & Lock Location",
+        "tooltip": "Hinge and lock locations are needed to ensure that your new door will fit properly, as each manufacturer has a different layout. See our Help Center > Measuring Worksheets for help",
+        "order": [
+          112, 113, 114, 115, 116, 425, 117, 426, 427, 428, 429, 430, 431, 432,
+          433, 435, 436, 119
+        ]
+      },
+      "10": {
+        "category_id": 17,
+        "columns": 3,
+        "options": {
+          "91": {
+            "product_id": 91,
+            "name": "No",
+            "description": "starting at $334",
+            "tooltip": "",
+            "is_most_popular": 0,
+            "requires_input": 0,
+            "primary_image": "/library/modules/upload/files/quote_product/91/6c1bb45d7e8838d7f1a072262329cdfb.jpg"
+          },
+          "92": {
+            "product_id": 92,
+            "name": "6-Panel",
+            "description": "starting at $438",
+            "tooltip": "",
+            "is_most_popular": 0,
+            "requires_input": 0,
+            "primary_image": "/library/modules/upload/files/quote_product/92/4a2ee8efb32b3dd7206e4036e66b627e.jpg"
+          },
+          "93": {
+            "product_id": 93,
+            "name": "2-Panel",
+            "description": "starting at $800",
+            "tooltip": "",
+            "is_most_popular": 0,
+            "requires_input": 0,
+            "primary_image": "/library/modules/upload/files/quote_product/93/ff014900519917d1d3bca919d79dfdb6.jpg"
+          }
+        },
+        "section_conditions": [
+          [
+            { "section": 3, "options": [53, 63], "condition": "IN" },
+            { "section": 9, "options": [112, 425, 430, 431], "condition": "IN" }
+          ],
+          [
+            { "section": 1, "options": [44], "condition": "IN" },
+            { "section": 3, "options": [53, 63], "condition": "IN" }
+          ]
+        ],
+        "option_conditions": [
+          { "params": [{ "section": 4, "options": [70] }], "show": [91, 92] },
+          {
+            "params": [{ "section": 4, "options": [68, 69, 71] }],
+            "show": [91, 92, 93]
+          }
+        ],
+        "title": "Does this door need to be Embossed?",
+        "tooltip": "Embossed Door Panel Detail\n\"Panel",
+        "order": [91, 92, 93]
+      },
+      "11": {
+        "category_id": 18,
+        "columns": 4,
+        "options": {
+          "94": {
+            "product_id": 94,
+            "name": "No Lite Kit",
+            "description": "",
+            "tooltip": "",
+            "is_most_popular": 0,
+            "requires_input": 0,
+            "primary_image": "/library/modules/upload/files/quote_product/94/526f318add543a2cedad55ed2256ea5a.jpg"
+          },
+          "95": {
+            "product_id": 95,
+            "name": "12\" x 12\"",
+            "description": "10\" x 10\" Exposed Glass",
+            "tooltip": "",
+            "is_most_popular": 0,
+            "requires_input": 0,
+            "primary_image": "/library/modules/upload/files/quote_product/95/8542cd2e59b8eb2f6453e9a0d78a5bb1.jpg"
+          },
+          "96": {
+            "product_id": 96,
+            "name": "5\" x 35\"",
+            "description": "3\" x 33\" Exposed Glass",
+            "tooltip": "",
+            "is_most_popular": 0,
+            "requires_input": 0,
+            "primary_image": "/library/modules/upload/files/quote_product/96/1073511724e3b899e050e56cfa6078d8.jpg"
+          },
+          "97": {
+            "product_id": 97,
+            "name": "6\" x 27\"",
+            "description": "4\" x 25\" Exposed Glass",
+            "tooltip": "",
+            "is_most_popular": 1,
+            "requires_input": 0,
+            "primary_image": "/library/modules/upload/files/quote_product/97/79781904cfd65da64dab531bca9a53e6.jpg"
+          },
+          "99": {
+            "product_id": 99,
+            "name": "7\" x 22\"",
+            "description": "5\" x 20\" Exposed Glass",
+            "tooltip": "",
+            "is_most_popular": 0,
+            "requires_input": 0,
+            "primary_image": "/library/modules/upload/files/quote_product/99/1678239a7a3a81e78b32832cd8bf3450.jpg"
+          },
+          "100": {
+            "product_id": 100,
+            "name": "8\" x 32\"",
+            "description": "6\" x 30\" Exposed Glass",
+            "tooltip": "",
+            "is_most_popular": 0,
+            "requires_input": 0,
+            "primary_image": "/library/modules/upload/files/quote_product/100/6ba2334729c705e4b65411b9ca329a42.jpg"
+          },
+          "98": {
+            "product_id": 98,
+            "name": "Long Narrow Lite",
+            "description": "",
+            "tooltip": "",
+            "is_most_popular": 0,
+            "requires_input": 0,
+            "primary_image": "/library/modules/upload/files/quote_product/98/8e96d8614623cf0ca71bdd563a5dccc3.jpg"
+          },
+          "101": {
+            "product_id": 101,
+            "name": "Half Glass",
+            "description": "",
+            "tooltip": "",
+            "is_most_popular": 0,
+            "requires_input": 0,
+            "primary_image": "/library/modules/upload/files/quote_product/101/274242bb961d308da842fee35a190a9a.jpg"
+          },
+          "102": {
+            "product_id": 102,
+            "name": "Full Glass",
+            "description": "",
+            "tooltip": "",
+            "is_most_popular": 0,
+            "requires_input": 0,
+            "primary_image": "/library/modules/upload/files/quote_product/102/f138b7061492f1e2202e194c542536f1.jpg"
+          },
+          "103": {
+            "product_id": 103,
+            "name": "Full Glass w/Integral Rail",
+            "description": "",
+            "tooltip": "",
+            "is_most_popular": 0,
+            "requires_input": 0,
+            "primary_image": "/library/modules/upload/files/quote_product/103/3a08c5a9b54a07e4a9cbd3136225c982.jpg"
+          }
+        },
+        "section_conditions": [
+          [
+            { "section": 10, "options": [92, 93], "condition": "NOT" },
+            {
+              "section": 3,
+              "options": [
+                48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63,
+                64, 65, 66, 67
+              ],
+              "condition": "IN"
+            }
+          ]
+        ],
+        "option_conditions": [
+          {
+            "params": [
+              { "section": 8, "options": [86, 87, 88] },
+              { "section": 4, "options": [68] }
+            ],
+            "show": [94, 95, 97, 99, 100, 101, 102]
+          },
+          {
+            "params": [
+              { "section": 8, "options": [86, 87, 88] },
+              { "section": 4, "options": [69, 70, 71] }
+            ],
+            "show": [94, 95, 96, 97, 99, 100, 101, 102]
+          },
+          {
+            "params": [
+              { "section": 8, "options": [85] },
+              { "section": 4, "options": [68] }
+            ],
+            "show": [94, 95, 97, 98, 99, 100, 101, 102, 103]
+          },
+          {
+            "params": [
+              { "section": 8, "options": [85] },
+              { "section": 4, "options": [69, 70, 71] }
+            ],
+            "show": [94, 95, 96, 97, 98, 99, 100, 101, 102, 103]
+          },
+          {
+            "params": [
+              { "section": 8, "options": [90] },
+              { "section": 4, "options": [68] }
+            ],
+            "show": [94, 95, 97, 99]
+          },
+          {
+            "params": [
+              { "section": 8, "options": [90] },
+              { "section": 4, "options": [69, 70, 71] }
+            ],
+            "show": [94, 95, 96, 97, 99]
+          },
+          {
+            "params": [
+              { "section": 8, "options": [89] },
+              { "section": 4, "options": [68] }
+            ],
+            "show": [94, 95, 97, 99, 100, 101]
+          },
+          {
+            "params": [
+              { "section": 8, "options": [89] },
+              { "section": 4, "options": [69, 70, 71] }
+            ],
+            "show": [94, 95, 96, 97, 99, 100, 101]
+          }
+        ],
+        "title": "Does this door need a Lite Kit with Glass?",
+        "tooltip": "Lite kit pre-installed in factory. Placement of all lite kits (except for 12\" x 12\") meet ADA Accessibility Guidelines.",
+        "order": [94, 95, 96, 97, 99, 100, 98, 101, 102, 103]
+      },
+      "12": {
+        "category_id": 19,
+        "columns": 3,
+        "options": {
+          "104": {
+            "product_id": 104,
+            "name": "1/4\" Clear Tempered",
+            "description": "Impact-Rated (Safety Glass)",
+            "tooltip": "",
+            "is_most_popular": 1,
+            "requires_input": 0,
+            "primary_image": "/library/modules/upload/files/quote_product/104/191263fc339acf0dfea065beb168a434.jpg"
+          },
+          "105": {
+            "product_id": 105,
+            "name": "1\" Insulated",
+            "description": "Two Panes of tempered glass with a metal spacer in a sealed insulated glass unit",
+            "tooltip": "",
+            "is_most_popular": 0,
+            "requires_input": 0,
+            "primary_image": "/library/modules/upload/files/quote_product/105/26deb3ca82507badead26fd4e16ab979.jpg"
+          },
+          "523": {
+            "product_id": 523,
+            "name": "1/4\" Wire Glass",
+            "description": "Impact-Rated - Safety film applied to one side",
+            "tooltip": "",
+            "is_most_popular": 0,
+            "requires_input": 0,
+            "primary_image": "/library/modules/upload/files/quote_product/523/052de21622de5513500155043c56487f.jpg"
+          }
+        },
+        "section_conditions": [
+          [
+            { "section": 7, "options": [84], "condition": "IN" },
+            {
+              "section": 11,
+              "options": [95, 96, 97, 98, 99, 100, 101, 102, 103],
+              "condition": "IN"
+            }
+          ]
+        ],
+        "title": "Glass Type",
+        "tooltip": "",
+        "order": [104, 105, 523]
+      },
+      "13": {
+        "category_id": 20,
+        "columns": 4,
+        "options": {
+          "106": {
+            "product_id": 106,
+            "name": "No Louver",
+            "description": "",
+            "tooltip": "",
+            "is_most_popular": 0,
+            "requires_input": 0,
+            "primary_image": "/library/modules/upload/files/quote_product/106/cf2cadd4e00f8affb821c680381ab731.jpg"
+          },
+          "107": {
+            "product_id": 107,
+            "name": "12\" x 12\"",
+            "description": "",
+            "tooltip": "",
+            "is_most_popular": 0,
+            "requires_input": 0,
+            "primary_image": "/library/modules/upload/files/quote_product/107/1be0f2dc8247c616ae485d071c84ce24.jpg"
+          },
+          "108": {
+            "product_id": 108,
+            "name": "24\" x 12\"",
+            "description": "",
+            "tooltip": "",
+            "is_most_popular": 0,
+            "requires_input": 0,
+            "primary_image": "/library/modules/upload/files/quote_product/108/6d2aa4e45ba85cbec9e7964c002e6bbd.jpg"
+          },
+          "462": {
+            "product_id": 462,
+            "name": "24\" x 18\"",
+            "description": "",
+            "tooltip": "",
+            "is_most_popular": 0,
+            "requires_input": 0,
+            "primary_image": "/library/modules/upload/files/quote_product/462/6e65b100c05d8ae2cc761c75902a6fd3.jpg"
+          },
+          "109": {
+            "product_id": 109,
+            "name": "24\" x 24\"",
+            "description": "",
+            "tooltip": "",
+            "is_most_popular": 0,
+            "requires_input": 0,
+            "primary_image": "/library/modules/upload/files/quote_product/109/15fd9ef76daf282c34ac99f490e16e16.jpg"
+          },
+          "110": {
+            "product_id": 110,
+            "name": "LL - Top and Bottom",
+            "description": "",
+            "tooltip": "",
+            "is_most_popular": 0,
+            "requires_input": 0,
+            "primary_image": "/library/modules/upload/files/quote_product/110/86a807912227860b4bb0ffc754c65440.jpg"
+          },
+          "111": {
+            "product_id": 111,
+            "name": "Full Louver",
+            "description": "",
+            "tooltip": "",
+            "is_most_popular": 0,
+            "requires_input": 0,
+            "primary_image": "/library/modules/upload/files/quote_product/111/ce70b5e9963625efda469c0fa9c4b3ae.jpg"
+          }
+        },
+        "section_conditions": [
+          [
+            { "sections": 1, "options": [45], "condition": "IN" },
+            {
+              "section": 9,
+              "options": [112, 425, 430, 431],
+              "condition": "IN"
+            },
+            { "section": 10, "options": [92, 93], "condition": "IN" }
+          ],
+          [
+            { "section": 8, "options": [85], "condition": "IN" },
+            { "section": 11, "options": [94], "condition": "IN" }
+          ],
+          [
+            { "section": 1, "options": [44], "condition": "IN" },
+            { "section": 7, "options": [84], "condition": "IN" },
+            {
+              "section": 10,
+              "options": [91],
+              "condition": "IN",
+              "allow_null": 1
+            },
+            { "section": 11, "options": [94], "condition": "IN" }
+          ],
+          [
+            { "section": 1, "options": [45], "condition": "IN" },
+            { "section": 7, "options": [84], "condition": "IN" },
+            {
+              "section": 9,
+              "options": [112, 425, 430, 431],
+              "condition": "IN"
+            },
+            {
+              "section": 10,
+              "options": [91],
+              "condition": "IN",
+              "allow_null": 1
+            },
+            { "section": 11, "options": [94], "condition": "IN" }
+          ],
+          [
+            { "section": 8, "options": [86, 87, 88, 89], "condition": "IN" },
+            { "section": 11, "options": [94], "condition": "IN" }
+          ],
+          [
+            { "section": 8, "options": [85], "condition": "IN" },
+            {
+              "section": 11,
+              "options": [95, 96, 97, 99, 100],
+              "condition": "IN"
+            }
+          ]
+        ],
+        "option_conditions": [
+          {
+            "params": [
+              { "section": 8, "options": [86, 87, 88, 89, 90] },
+              {
+                "section": 11,
+                "options": [95, 96, 97, 98, 99, 100, 101, 102, 103]
+              }
+            ],
+            "show": [106, 107, 108, 462]
+          },
+          {
+            "params": [
+              { "section": 8, "options": [86, 87, 88, 89, 90] },
+              { "section": 11, "options": [94] }
+            ],
+            "show": [106, 107, 108, 462]
+          },
+          {
+            "params": [
+              { "section": 8, "options": [85] },
+              { "section": 11, "options": [94] }
+            ],
+            "show": [106, 107, 108, 462, 109, 110, 111]
+          },
+          {
+            "params": [
+              { "section": 8, "options": [85] },
+              {
+                "section": 11,
+                "options": [95, 96, 97, 98, 99, 100, 101, 102, 103]
+              }
+            ],
+            "show": [106, 107, 108, 462, 109]
+          }
+        ],
+        "title": "Does this door need a Louver?",
+        "tooltip": "Louver pre-installed in factory. ",
+        "order": [106, 107, 108, 462, 109, 110, 111]
+      },
+      "14": {
+        "category_id": 22,
+        "columns": 4,
+        "options": {
+          "120": {
+            "product_id": 120,
+            "name": "Wood Stud Wall",
+            "description": "",
+            "tooltip": "",
+            "is_most_popular": 0,
+            "requires_input": 0,
+            "primary_image": "/library/modules/upload/files/quote_product/120/91ab91ba5c40eb2017ade2610c5a6c24.jpg"
+          },
+          "121": {
+            "product_id": 121,
+            "name": "Steel Stud Wall",
+            "description": "",
+            "tooltip": "",
+            "is_most_popular": 0,
+            "requires_input": 0,
+            "primary_image": "/library/modules/upload/files/quote_product/121/83c10550942cb82b60d1345a6449c834.jpg"
+          },
+          "122": {
+            "product_id": 122,
+            "name": "New Block Wall",
+            "description": "",
+            "tooltip": "",
+            "is_most_popular": 0,
+            "requires_input": 0,
+            "primary_image": "/library/modules/upload/files/quote_product/122/9cc51f05b03485a4850ec96269d521d4.jpg"
+          },
+          "123": {
+            "product_id": 123,
+            "name": "Existing Block Wall",
+            "description": "",
+            "tooltip": "",
+            "is_most_popular": 0,
+            "requires_input": 0,
+            "primary_image": "/library/modules/upload/files/quote_product/123/0e91082c0d4bc1fcbf3f989eeb468207.jpg"
+          }
+        },
+        "section_conditions": [
+          [{ "section": 1, "options": [44], "condition": "IN" }]
+        ],
+        "title": "Add Door Frame",
+        "tooltip": "If you do not need a new door frame, please stop using this tool and download our Replacement Door Worksheet which can be found in our \"Help Center\". Navigate to the \"Measuring Charts & Worksheet\" page for a downloadable form.",
+        "order": [120, 121, 122, 123]
+      },
+      "15": {
+        "category_id": 23,
+        "columns": 2,
+        "options": {
+          "124": {
+            "product_id": 124,
+            "name": "Yes",
+            "description": "",
+            "tooltip": "",
+            "is_most_popular": 0,
+            "requires_input": 0
+          },
+          "125": {
+            "product_id": 125,
+            "name": "No",
+            "description": "",
+            "tooltip": "",
+            "is_most_popular": 0,
+            "requires_input": 0
+          }
+        },
+        "section_conditions": [
+          [{ "section": 14, "options": [120, 121], "condition": "IN" }]
+        ],
+        "option_conditions": [
+          {
+            "params": [
+              { "section": 7, "options": [83] },
+              { "section": 8, "options": [90] }
+            ],
+            "show": [124, 125],
+            "warnings": {
+              "124": "3 Hour Fire-Rated frames must be directly attached to studs, therefore the wall must be rebuilt. Please go back and change fire-rating or select \"No\", to request 3 Hour Rated frame. Only 20 to 90 Minute fire-rating available for already built stud walls."
+            }
+          },
+          {
+            "params": [
+              { "section": 7, "options": [83] },
+              { "section": 8, "options": [85, 86, 87, 88, 89] }
+            ],
+            "show": [124, 125]
+          },
+          {
+            "params": [
+              { "section": 7, "options": [83] },
+              { "section": 2, "options": [47] },
+              { "section": 6, "options": [82] }
+            ],
+            "show": [124, 125]
+          },
+          {
+            "params": [
+              { "section": 7, "options": [83] },
+              { "section": 2, "options": [47] },
+              { "section": 8, "options": [85, 86, 87, 88, 89] }
+            ],
+            "show": [124, 125]
+          },
+          { "params": [{ "section": 7, "options": [84] }], "show": [124, 125] }
+        ],
+        "title": "Has the wall been built yet?",
+        "tooltip": "",
+        "order": [124, 125]
+      },
+      "16": {
+        "category_id": 24,
+        "columns": 4,
+        "options": {
+          "126": {
+            "product_id": 126,
+            "name": "4-5/8\"</strong> (w/ wood stud)",
+            "description": "",
+            "tooltip": "",
+            "is_most_popular": 0,
+            "requires_input": 0,
+            "primary_image": "/library/modules/upload/files/quote_product/126/4f9dd40901dfae70e2795b5c4127c33c.jpg"
+          },
+          "127": {
+            "product_id": 127,
+            "name": "4-7/8\"</strong> (w/ wood stud)",
+            "description": "",
+            "tooltip": "",
+            "is_most_popular": 1,
+            "requires_input": 0,
+            "primary_image": "/library/modules/upload/files/quote_product/127/c53614ed74f0692cd636fc1f46cfb21d.jpg"
+          },
+          "128": {
+            "product_id": 128,
+            "name": "6-1/8\"</strong> (w/ wood stud)",
+            "description": "",
+            "tooltip": "",
+            "is_most_popular": 0,
+            "requires_input": 0,
+            "primary_image": "/library/modules/upload/files/quote_product/128/8a9f38114b06b88c498e1ed2052c18af.jpg"
+          },
+          "129": {
+            "product_id": 129,
+            "name": "6-3/4\"</strong> (w/ wood stud)",
+            "description": "",
+            "tooltip": "",
+            "is_most_popular": 0,
+            "requires_input": 0,
+            "primary_image": "/library/modules/upload/files/quote_product/129/692e47fa1cf7525359485c043b423566.jpg"
+          },

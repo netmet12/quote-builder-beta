@@ -1,0 +1,393 @@
+
+        "section_conditions": [
+          [{ "section": 16, "options": [313], "condition": "IN" }],
+          [{ "section": 5, "options": [259, 260], "condition": "IN" }]
+        ],
+        "title": "Outside Exit Device Trim",
+        "tooltip": "Note: Trim designs vary, depending on device brand and model. ",
+        "order": [325, 326, 330, 327, 328, 329]
+      },
+      "21": {
+        "category_id": 96,
+        "columns": 3,
+        "options": {
+          "482": {
+            "product_id": 482,
+            "name": "Entry",
+            "description": "ANSI Function: 08 - Key locks and unlocks lever. Operates as Classroom function. ",
+            "tooltip": "",
+            "is_most_popular": 1,
+            "requires_input": 0,
+            "primary_image": "/library/modules/upload/files/quote_product/482/396416b1cd6a3b4a531400415bd186d9.jpg"
+          },
+          "483": {
+            "product_id": 483,
+            "name": "Night Latch (Storeroom)",
+            "description": "ANSI Function: 09 - Lever is always locked. Key retracts latch bolt. ",
+            "tooltip": "",
+            "is_most_popular": 0,
+            "requires_input": 0,
+            "primary_image": "/library/modules/upload/files/quote_product/483/4596123718e1f0f9823f2623567d48ef.jpg"
+          },
+          "484": {
+            "product_id": 484,
+            "name": "Passage",
+            "description": "ANSI Function: 14 - Lever always unlocked - always operable and free.",
+            "tooltip": "",
+            "is_most_popular": 0,
+            "requires_input": 0,
+            "primary_image": "/library/modules/upload/files/quote_product/484/806713b4ab600973d8bd3732b7da13b6.jpg"
+          }
+        },
+        "section_conditions": [
+          [
+            { "section": 16, "options": [313], "condition": "IN" },
+            { "section": 20, "options": [326, 330], "condition": "IN" }
+          ]
+        ],
+        "title": "Exit Device Trim Function",
+        "tooltip": "Lever design varies, depending on device brand and model. ",
+        "order": [482, 483, 484]
+      },
+      "22": {
+        "category_id": 87,
+        "columns": 4,
+        "options": {
+          "333": {
+            "product_id": 333,
+            "name": "Door Closer",
+            "description": "regular, top jamb and/or parallel arm mount",
+            "tooltip": "",
+            "is_most_popular": 1,
+            "requires_input": 0,
+            "primary_image": "/library/modules/upload/files/quote_product/333/fc05b4d6be53050d6d4105cb33a2aeab.jpg"
+          },
+          "334": {
+            "product_id": 334,
+            "name": "Door Closer w/ Hold Open Arm",
+            "description": "regular, top jamb and/or parallel arm mount",
+            "tooltip": "",
+            "is_most_popular": 0,
+            "requires_input": 0,
+            "primary_image": "/library/modules/upload/files/quote_product/334/db47552e407dfe7e1aed7bcc0b9d4ff3.jpg"
+          },
+          "335": {
+            "product_id": 335,
+            "name": "Spring Hinges",
+            "description": "not recommended for ADA compliant applications, large doors or high traffic openings ",
+            "tooltip": "",
+            "is_most_popular": 0,
+            "requires_input": 0,
+            "primary_image": "/library/modules/upload/files/quote_product/335/1d5b11db81c31a4325b9f96dfbde2c40.jpg"
+          },
+          "457": {
+            "product_id": 457,
+            "name": "No Closing Device",
+            "description": "",
+            "tooltip": "",
+            "is_most_popular": 0,
+            "requires_input": 0,
+            "primary_image": "/library/modules/upload/files/quote_product/457/2f8cda22e51dbcd204b1cb59914e1b26.jpg"
+          }
+        },
+        "section_conditions": [
+          [
+            { "section": 5, "options": [255, 256, 257, 258], "condition": "IN" }
+          ],
+          [{ "section": 4, "options": [251, 252, 253, 254], "condition": "IN" }]
+        ],
+        "title": "Control Door",
+        "tooltip": "We strongly recommend door closers over spring hinges, as they do a much better job of closing, and controlling a door. ",
+        "order": [333, 334, 335, 457]
+      },
+      "23": {
+        "category_id": 88,
+        "columns": 4,
+        "multi_select": 1,
+        "options": {
+          "336": {
+            "product_id": 336,
+            "name": "Kickplate",
+            "description": "10\" H x -2\" of door width",
+            "tooltip": "",
+            "is_most_popular": 0,
+            "requires_input": 0,
+            "primary_image": "/library/modules/upload/files/quote_product/336/7adc492b3ca6a3c50a9a8ce96d5664d1.jpg"
+          },
+          "337": {
+            "product_id": 337,
+            "name": "Threshold",
+            "description": "1/2\" H (ADA Compliant) ",
+            "tooltip": "",
+            "is_most_popular": 0,
+            "requires_input": 0,
+            "primary_image": "/library/modules/upload/files/quote_product/337/24225d0b9a1116ea79f2487a4b533389.jpg"
+          },
+          "338": {
+            "product_id": 338,
+            "name": "Brush Door Sweep (TD-SWB)",
+            "description": "for use with threshold",
+            "tooltip": "",
+            "is_most_popular": 0,
+            "requires_input": 0,
+            "primary_image": "/library/modules/upload/files/quote_product/338/faf77aa25345d813e2b167d1f6ccffd2.jpg"
+          },
+          "339": {
+            "product_id": 339,
+            "name": "Smoke / Sound Seal (S88)",
+            "description": "Adhesive Gasketing",
+            "tooltip": "",
+            "is_most_popular": 0,
+            "requires_input": 0,
+            "primary_image": "/library/modules/upload/files/quote_product/339/feaee76c75900017d46c3cb89b878772.jpg"
+          },
+          "340": {
+            "product_id": 340,
+            "name": "Smoke / Sound Seal (S773)",
+            "description": "Triple Fin Adhesive Gasketing",
+            "tooltip": "",
+            "is_most_popular": 0,
+            "requires_input": 0,
+            "primary_image": "/library/modules/upload/files/quote_product/340/a5b6cc96ddd32f29f21d32947423a5f4.jpg"
+          },
+          "458": {
+            "product_id": 458,
+            "name": "None",
+            "description": "",
+            "tooltip": "",
+            "is_most_popular": 0,
+            "requires_input": 0,
+            "primary_image": "/library/modules/upload/files/quote_product/458/8feddd06b443f63e289cfa167def1cdf.jpg"
+          }
+        },
+        "clear": 458,
+        "radios": [
+          {
+            "title": "Misc. Options",
+            "options": [458, 336, 337, 338],
+            "allow_multi": true
+          },
+          { "title": "Smoke Seal", "options": [339, 340] }
+        ],
+        "title": "Protect Door",
+        "tooltip": "Select none or all required options, then the click \"NEXT\" button located top right",
+        "order": [336, 337, 338, 339, 340, 458]
+      },
+      "24": {
+        "category_id": 89,
+        "columns": 3,
+        "multi_select": 1,
+        "options": {
+          "459": {
+            "product_id": 459,
+            "name": "None",
+            "description": "",
+            "tooltip": "",
+            "is_most_popular": 0,
+            "requires_input": 0,
+            "primary_image": "/library/modules/upload/files/quote_product/459/1a14816984898b4de07995ce6403d232.jpg"
+          },
+          "341": {
+            "product_id": 341,
+            "name": "Kick Down Holder (TD-KD5)",
+            "description": "",
+            "tooltip": "",
+            "is_most_popular": 0,
+            "requires_input": 0,
+            "primary_image": "/library/modules/upload/files/quote_product/341/17cac4a450144aec60c7e679d2abf17d.jpg"
+          },
+          "342": {
+            "product_id": 342,
+            "name": "Wall Stop (TD-WS)",
+            "description": "",
+            "tooltip": "",
+            "is_most_popular": 0,
+            "requires_input": 0,
+            "primary_image": "/library/modules/upload/files/quote_product/342/9cda34a21acee6e1bf96e3c319123f81.jpg"
+          },
+          "343": {
+            "product_id": 343,
+            "name": "Dome Floor Stop (TD-FS)",
+            "description": "",
+            "tooltip": "",
+            "is_most_popular": 0,
+            "requires_input": 0,
+            "primary_image": "/library/modules/upload/files/quote_product/343/c25fdb50ae71209744c1ddcae5cce2c9.jpg"
+          },
+          "344": {
+            "product_id": 344,
+            "name": "Door Viewer (TD-VIEWER)",
+            "description": "",
+            "tooltip": "",
+            "is_most_popular": 0,
+            "requires_input": 0,
+            "primary_image": "/library/modules/upload/files/quote_product/344/5ff8d5d15c244291fc4c72f715f1e9dc.jpg"
+          }
+        },
+        "clear": 459,
+        "option_conditions": [
+          {
+            "params": [{ "section": 6, "options": [262] }],
+            "show": [341, 342, 343, 344, 459]
+          },
+          {
+            "params": [
+              {
+                "section": 6,
+                "options": [263, 264, 265, 266, 267, 268, 269, 270, 271]
+              }
+            ],
+            "show": [341, 342, 343, 459]
+          }
+        ],
+        "title": "Add On's",
+        "tooltip": "Select none or all required options, then the click \"NEXT\" button located top right",
+        "order": [459, 341, 342, 343, 344]
+      },
+      "25": {
+        "category_id": 90,
+        "columns": 3,
+        "options": {
+          "345": {
+            "product_id": 345,
+            "name": "Satin Chrome",
+            "description": "brushed chrome, stainless steel and/or anodized aluminum ",
+            "tooltip": "",
+            "is_most_popular": 1,
+            "requires_input": 0,
+            "primary_image": "/library/modules/upload/files/quote_product/345/d74f8200d784328f6ebf5f4679d0469d.jpg"
+          },
+          "348": {
+            "product_id": 348,
+            "name": "Dark Bronze",
+            "description": "dark satin bronze, oil rubbed and/or dark bronze anodized",
+            "tooltip": "",
+            "is_most_popular": 0,
+            "requires_input": 0,
+            "primary_image": "/library/modules/upload/files/quote_product/348/41a9f5e6c770056f18b0562353aeb07e.jpg"
+          },
+          "502": {
+            "product_id": 502,
+            "name": "Black",
+            "description": "matte black, flat black",
+            "tooltip": "",
+            "is_most_popular": 0,
+            "requires_input": 0,
+            "primary_image": "/library/modules/upload/files/quote_product/502/3d2370c9ca3d70d6f15ce730ea75bb5f.jpg"
+          }
+        },
+        "title": "Hardware Finish",
+        "tooltip": "Other finishes available upon request. Other finishes may require longer lead times. ",
+        "order": [345, 348, 502]
+      },
+      "26": {
+        "category_id": 91,
+        "columns": 3,
+        "options": {
+          "350": {
+            "product_id": 350,
+            "name": "Light Duty / Least Expensive",
+            "description": "low traffic, low abuse",
+            "tooltip": "",
+            "is_most_popular": 0,
+            "requires_input": 0
+          },
+          "351": {
+            "product_id": 351,
+            "name": "Medium Duty",
+            "description": "medium to frequent traffic, medium abuse",
+            "tooltip": "",
+            "is_most_popular": 0,
+            "requires_input": 0
+          },
+          "352": {
+            "product_id": 352,
+            "name": "Heavy Duty",
+            "description": "high traffic, high abuse, high security",
+            "tooltip": "",
+            "is_most_popular": 0,
+            "requires_input": 0
+          }
+        },
+        "title": "Hardware Grade",
+        "tooltip": "",
+        "order": [350, 351, 352]
+      },
+      "27": {
+        "category_id": 92,
+        "columns": 2,
+        "options": {
+          "354": {
+            "product_id": 354,
+            "name": "Value Engineered - $$",
+            "description": "Value Brand",
+            "tooltip": "",
+            "is_most_popular": 0,
+            "requires_input": 0
+          },
+          "355": {
+            "product_id": 355,
+            "name": "Premium Brand - $$$$",
+            "description": "Schlage, LCN, Von Duprin, etc.",
+            "tooltip": "",
+            "is_most_popular": 0,
+            "requires_input": 0
+          }
+        },
+        "title": "Hardware Brand",
+        "tooltip": "Value Brand Range: </br>\nEntry Lever Lock \u2013 $56-135 </br>\nDoor Closers \u2013 $64-125</br>\nExit Devices \u2013 $119-399</br>\n</br>\nPremium Brand Range: </br>\nEntry Lever Lock \u2013 $145-330 </br>\nDoor Closers \u2013 $119-285</br>\nExit Devices \u2013 $279-809</br>\n</br>\n*Based on most commonly specified hardware. Application, Fire-Rating, Lock Function, Hardware Grade and/or Finish may affect price.</br>\n</br>\nTypically, premium brand hardware requires less maintenance, offers better long-term value and quality.",
+        "order": [354, 355]
+      },
+      "28": {
+        "category_id": 93,
+        "columns": 3,
+        "options": {
+          "356": {
+            "product_id": 356,
+            "name": "Lever Lock",
+            "description": "161 Prep",
+            "tooltip": "",
+            "is_most_popular": 0,
+            "requires_input": 0
+          },
+          "357": {
+            "product_id": 357,
+            "name": "Lever Lock and Deadbolt",
+            "description": "161 Prep (x2)",
+            "tooltip": "",
+            "is_most_popular": 0,
+            "requires_input": 0
+          },
+          "358": {
+            "product_id": 358,
+            "name": "Mortise Lock",
+            "description": "86 Edge Prep",
+            "tooltip": "",
+            "is_most_popular": 0,
+            "requires_input": 0
+          },
+          "359": {
+            "product_id": 359,
+            "name": "Blank Edge (Exit Device or Push/Pull)",
+            "description": "(Template Required)",
+            "tooltip": "",
+            "is_most_popular": 0,
+            "requires_input": 0
+          }
+        },
+        "section_conditions": [
+          [{ "section": 16, "options": [456], "condition": "IN" }]
+        ],
+        "title": "Door Prep",
+        "tooltip": "",
+        "order": [356, 357, 358, 359]
+      }
+    }
+  },
+  "hash": null,
+  "pass_validation": null,
+  "errors": [],
+  "form_values": [],
+  "display_message": null,
+  "xss_filtering": true
+}

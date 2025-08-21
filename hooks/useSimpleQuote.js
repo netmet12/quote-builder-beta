@@ -52,7 +52,7 @@ export function useSimpleQuote() {
   const currentSection = visibleSections[currentStep] || null
 
   // Update visible sections when selections change
-  const updateVisibleSections = useCallback(async () => {
+  const updateVisibleSections = useCallback(() => {
     if (!selectedProductType) {
       setVisibleSections([])
       return
@@ -60,7 +60,7 @@ export function useSimpleQuote() {
     
     setLoading(true)
     try {
-      const sections = await getVisibleSections(selectedProductType, selections)
+      const sections = getVisibleSections(selectedProductType, selections)
       setVisibleSections(sections)
     } catch (error) {
       console.error('Error updating visible sections:', error)
@@ -104,9 +104,9 @@ export function useSimpleQuote() {
     
     // Auto-advance if this step is now complete and there are more steps
     const isStepComplete = optionIds.length > 0
-    if (isStepComplete && currentStep < visibleSections.length - 1) {
+    if (isStepComplete && currentStep < visibleSections.length - 1 && !currentSection?.multi_select) {
       try {
-        const nextAvailableStep = await getNextStep(currentStep, visibleSections, newSelections)
+        const nextAvailableStep = getNextStep(currentStep, visibleSections, newSelections, selectedProductType)
         if (nextAvailableStep > currentStep) {
           setCurrentStep(nextAvailableStep)
         }
@@ -122,18 +122,18 @@ export function useSimpleQuote() {
     }
   }
 
-  const nextStep = async () => {
+  const nextStep = () => {
     try {
-      const next = await getNextStep(currentStep, visibleSections, selections)
+      const next = getNextStep(currentStep, visibleSections, selections, selectedProductType)
       setCurrentStep(next)
     } catch (error) {
       console.error('Error getting next step:', error)
     }
   }
 
-  const prevStep = async () => {
+  const prevStep = () => {
     try {
-      const prev = await getPrevStep(currentStep, visibleSections, selections)
+      const prev = getPrevStep(currentStep, visibleSections, selections, selectedProductType)
       setCurrentStep(prev)
     } catch (error) {
       console.error('Error getting previous step:', error)
@@ -149,7 +149,6 @@ export function useSimpleQuote() {
 
   const canAdvance = () => {
     if (!currentSection) return false
-    if (!currentSection.required) return true
     
     const selection = selections[currentSection.id]
     return selection && selection.length > 0

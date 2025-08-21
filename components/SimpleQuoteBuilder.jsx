@@ -263,17 +263,19 @@ export function SimpleQuoteBuilder() {
               />
               
               {/* Choose layout based on section preferences */}
-              {quote.currentSection.columns <= 2 ? (
-                <RadioGroup 
-                  section={quote.currentSection}
-                  selections={quote.selections}
-                  onSelect={quote.makeSelection}
-                />
-              ) : (
+              {quote.currentSection.multi_select === 1 || quote.currentSection.columns > 2 ? (
                 <OptionGrid 
                   section={quote.currentSection}
                   selections={quote.selections}
                   onSelect={quote.makeSelection}
+                  productId={quote.selectedProductType}
+                />
+              ) : (
+                <RadioGroup 
+                  section={quote.currentSection}
+                  selections={quote.selections}
+                  onSelect={quote.makeSelection}
+                  productId={quote.selectedProductType}
                 />
               )}
 

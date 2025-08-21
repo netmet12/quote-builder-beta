@@ -54,7 +54,7 @@ function Input({ value, onChange, placeholder, className = "" }) {
   )
 }
 
-export function OptionGrid({ section, selections = {}, onSelect }) {
+export function OptionGrid({ section, selections = {}, onSelect, productId }) {
   const [customValues, setCustomValues] = useState({})
   const [visibleOptions, setVisibleOptions] = useState([])
   const [loading, setLoading] = useState(false)
@@ -62,13 +62,14 @@ export function OptionGrid({ section, selections = {}, onSelect }) {
   if (!section) return null
 
   const currentSelection = selections[section.id] || []
+  const isMultiSelect = section.multi_select === 1
 
   // Load visible options using rules engine
   useEffect(() => {
-    const loadVisibleOptions = async () => {
+    const loadVisibleOptions = () => {
       setLoading(true)
       try {
-        const formattedOptions = await formatOptionsForDisplay(section, selections)
+        const formattedOptions = formatOptionsForDisplay(section, selections, productId)
         setVisibleOptions(formattedOptions)
       } catch (error) {
         console.error('Error loading visible options:', error)
@@ -81,7 +82,12 @@ export function OptionGrid({ section, selections = {}, onSelect }) {
           })
           .map(([id, option]) => ({
             id: parseInt(id),
-            ...option,
+            name: option.name,
+            description: option.description || '',
+            tooltip: option.tooltip || '',
+            image: option.primary_image || '/placeholder.svg',
+            popular: option.is_most_popular === 1,
+            customInput: option.requires_input === 1,
             selected: currentSelection.includes(parseInt(id))
           }))
         setVisibleOptions(fallbackOptions)
@@ -91,20 +97,43 @@ export function OptionGrid({ section, selections = {}, onSelect }) {
     }
 
     loadVisibleOptions()
-  }, [section, selections])
+  }, [section, selections, productId])
 
   const handleOptionClick = (optionId, option) => {
     if (option.customInput) {
       // For custom input options, just select them (input will appear)
-      onSelect(section.id, [parseInt(optionId)])
+      if (isMultiSelect) {
+        const isSelected = currentSelection.includes(parseInt(optionId))
+        const newSelection = isSelected 
+          ? currentSelection.filter(id => id !== parseInt(optionId))
+          : [...currentSelection, parseInt(optionId)]
+        onSelect(section.id, newSelection)
+      } else {
+        onSelect(section.id, [parseInt(optionId)])
+      }
     } else {
-      // For regular options, toggle selection
+      // For regular options, handle selection based on multi-select
       const isSelected = currentSelection.includes(parseInt(optionId))
-      const newSelection = isSelected 
-        ? currentSelection.filter(id => id !== parseInt(optionId))
-        : [parseInt(optionId)] // Single selection for now
       
-      onSelect(section.id, newSelection)
+      if (isMultiSelect) {
+        // Handle clear option logic
+        if (section.clear && parseInt(optionId) === section.clear) {
+          // Clear option selected - remove all others
+          onSelect(section.id, [parseInt(optionId)])
+        } else if (section.clear && currentSelection.includes(section.clear)) {
+          // Selecting non-clear option when clear is selected - replace clear
+          onSelect(section.id, [parseInt(optionId)])
+        } else {
+          // Normal multi-select toggle
+          const newSelection = isSelected 
+            ? currentSelection.filter(id => id !== parseInt(optionId))
+            : [...currentSelection, parseInt(optionId)]
+          onSelect(section.id, newSelection)
+        }
+      } else {
+        // Single selection
+        onSelect(section.id, [parseInt(optionId)])
+      }
     }
   }
 
@@ -132,9 +161,6 @@ export function OptionGrid({ section, selections = {}, onSelect }) {
         {section.tooltip && (
           <p className="text-gray-600 text-sm">{section.tooltip}</p>
         )}
-        {section.required && (
-          <Badge className="mt-2 bg-blue-100 text-blue-800">Required</Badge>
-        )}
       </div>
 
       {/* Loading State */}
@@ -160,9 +186,22 @@ export function OptionGrid({ section, selections = {}, onSelect }) {
                       ? 'ring-2 ring-blue-500 bg-blue-50 shadow-md' 
                       : 'hover:bg-gray-50 hover:shadow-md'
                   }`}
-                  onClick={() => !option.customInput && handleOptionClick(option.id, option)}
+                  onClick={() => handleOptionClick(option.id, option)}
                 >
                   <div className="p-4 text-center">
+                    {/* Multi-select checkbox indicator */}
+                    {isMultiSelect && (
+                      <div className="flex justify-end mb-2">
+                        <div className={`w-5 h-5 border-2 rounded flex items-center justify-center ${
+                          isSelected ? 'border-blue-500 bg-blue-500' : 'border-gray-300'
+                        }`}>
+                          {isSelected && (
+                            <div className="text-white text-xs">✓</div>
+                          )}
+                        </div>
+                      </div>
+                    )}
+
                     <div className="flex items-center justify-center mb-2">
                       <h3 className="font-semibold text-gray-900">
                         {option.name}
@@ -176,7 +215,11 @@ export function OptionGrid({ section, selections = {}, onSelect }) {
                       <p className="text-sm text-gray-600 mb-3">{option.description}</p>
                     )}
 
-                    {option.image && (
+                    {option.tooltip && (
+                      <p className="text-xs text-gray-500 mb-3 italic">{option.tooltip}</p>
+                    )}
+
+                    {option.image && option.image !== '/placeholder.svg' && (
                       <img 
                         src={option.image} 
                         alt={option.name}
@@ -186,7 +229,10 @@ export function OptionGrid({ section, selections = {}, onSelect }) {
 
                   {option.customInput && !isSelected && (
                     <Button 
-                      onClick={() => handleOptionClick(option.id, option)}
+                      onClick={(e) => {
+                        e.stopPropagation()
+                        handleOptionClick(option.id, option)
+                      }}
                       className="mt-2 bg-gray-600 hover:bg-gray-700"
                     >
                       Select & Customize
@@ -194,7 +240,9 @@ export function OptionGrid({ section, selections = {}, onSelect }) {
                   )}
 
                   {isSelected && !option.customInput && (
-                    <Badge className="mt-2 bg-green-100 text-green-800">Selected</Badge>
+                    <Badge className="mt-2 bg-green-100 text-green-800">
+                      {isMultiSelect ? 'Selected' : 'Selected'}
+                    </Badge>
                   )}
                 </div>
               </Card>
@@ -243,15 +291,13 @@ export function OptionGrid({ section, selections = {}, onSelect }) {
         <p className="text-sm text-gray-600">
           {currentSelection.length > 0 ? (
             <span className="text-green-600 font-medium">
-              ✓ Selection made - you can continue to the next step
-            </span>
-          ) : section.required ? (
-            <span className="text-amber-600 font-medium">
-              Please make a selection to continue
+              ✓ {isMultiSelect && currentSelection.length > 1 
+                ? `${currentSelection.length} selections made` 
+                : 'Selection made'} - you can continue to the next step
             </span>
           ) : (
-            <span className="text-gray-500">
-              Optional step - you can skip or make a selection
+            <span className="text-amber-600 font-medium">
+              Please make a selection to continue
             </span>
           )}
         </p>
