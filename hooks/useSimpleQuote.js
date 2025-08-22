@@ -44,6 +44,7 @@ export function useSimpleQuote() {
   // Additional state for async data
   const [visibleSections, setVisibleSections] = useState([])
   const [loading, setLoading] = useState(false)
+  const [initialized, setInitialized] = useState(true) // Simple config loads synchronously
 
   // Derived data
   const productTypes = getProductTypes()
@@ -90,6 +91,7 @@ export function useSimpleQuote() {
   }
 
   const makeSelection = async (sectionId, optionIds, customValue = null) => {
+    console.log("poop")
     const newSelections = {
       ...selections,
       [sectionId]: optionIds
@@ -192,6 +194,7 @@ export function useSimpleQuote() {
     currentStep,
     selections,
     loading,
+    initialized,
     
     // Derived data
     productTypes,

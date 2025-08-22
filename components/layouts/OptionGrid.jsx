@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useEffect } from "react"
+import { useState, useEffect, useMemo } from "react"
 import { formatOptionsForDisplay } from "../../lib/supabase-config-helpers.js"
 
 // Simple Card component (replacing complex UI library)
@@ -56,48 +56,32 @@ function Input({ value, onChange, placeholder, className = "" }) {
 
 export function OptionGrid({ section, selections = {}, onSelect, productId }) {
   const [customValues, setCustomValues] = useState({})
-  const [visibleOptions, setVisibleOptions] = useState([])
   const [loading, setLoading] = useState(false)
   
   if (!section) return null
 
   const currentSelection = selections[section.id] || []
-  const isMultiSelect = section.multi_select === 1
+  const isMultiSelect = section.multi_select === 1 || section.multi_select === true
 
-  // Load visible options using rules engine
-  useEffect(() => {
-    const loadVisibleOptions = async () => {
-      setLoading(true)
-      try {
-        const formattedOptions = await formatOptionsForDisplay(section, selections, productId)
-        setVisibleOptions(formattedOptions)
-      } catch (error) {
-        console.error('Error loading visible options:', error)
-        // Fallback to all options
-        const fallbackOptions = Object.entries(section.options || {})
-          .sort((a, b) => {
-            const aIndex = section.order?.indexOf(parseInt(a[0])) ?? 999
-            const bIndex = section.order?.indexOf(parseInt(b[0])) ?? 999
-            return aIndex - bIndex
-          })
-          .map(([id, option]) => ({
-            id: parseInt(id),
-            name: option.name,
-            description: option.description || '',
-            tooltip: option.tooltip || '',
-            image: option.primary_image || '/placeholder.svg',
-            popular: option.is_most_popular === true,
-            customInput: option.requires_input === true,
-            selected: currentSelection.includes(parseInt(id))
-          }))
-        setVisibleOptions(fallbackOptions)
-      } finally {
-        setLoading(false)
-      }
-    }
-
-    loadVisibleOptions()
-  }, [section, selections, productId])
+  // Compute visible options directly without state
+  const visibleOptions = useMemo(() => {
+    return Object.entries(section.options || {})
+      .sort((a, b) => {
+        const aIndex = section.order?.indexOf(parseInt(a[0])) ?? 999
+        const bIndex = section.order?.indexOf(parseInt(b[0])) ?? 999
+        return aIndex - bIndex
+      })
+      .map(([id, option]) => ({
+        id: parseInt(id),
+        name: option.name,
+        description: option.description || '',
+        tooltip: option.tooltip || '',
+        image: option.primary_image || '/placeholder.svg',
+        popular: option.is_most_popular === true,
+        customInput: option.requires_input === true,
+        selected: currentSelection.includes(parseInt(id))
+      }))
+  }, [section, currentSelection])
 
   const handleOptionClick = (optionId, option) => {
     if (option.customInput) {
@@ -163,17 +147,9 @@ export function OptionGrid({ section, selections = {}, onSelect, productId }) {
         )}
       </div>
 
-      {/* Loading State */}
-      {loading && (
-        <div className="flex justify-center items-center py-8">
-          <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600"></div>
-          <span className="ml-2 text-gray-600">Loading options...</span>
-        </div>
-      )}
-
       {/* Options Grid */}
-      {!loading && visibleOptions.length > 0 && (
-        <div className={`grid gap-4 ${getGridColumns(section.columns)}`}>
+      {visibleOptions.length > 0 && (
+        <div className={`grid gap-4 items-stretch ${getGridColumns(section.columns)}`}>
           {visibleOptions.map((option) => {
             const isSelected = option.selected
             const showCustomInput = option.customInput && isSelected
@@ -181,14 +157,14 @@ export function OptionGrid({ section, selections = {}, onSelect, productId }) {
             return (
               <div key={option.id} className="space-y-3">
                 <Card
-                  className={`cursor-pointer transition-all duration-200 ${
+                  className={`cursor-pointer transition-all duration-200 h-full flex flex-col ${
                     isSelected 
                       ? 'ring-2 ring-blue-500 bg-blue-50 shadow-md' 
                       : 'hover:bg-gray-50 hover:shadow-md'
                   }`}
                   onClick={() => handleOptionClick(option.id, option)}
                 >
-                  <div className="p-4 text-center">
+                  <div className="p-4 text-center flex-1 flex flex-col justify-between">
                     {/* Multi-select checkbox indicator */}
                     {isMultiSelect && (
                       <div className="flex justify-end mb-2">
@@ -203,16 +179,24 @@ export function OptionGrid({ section, selections = {}, onSelect, productId }) {
                     )}
 
                     <div className="flex items-center justify-center mb-2">
-                      <h3 className="font-semibold text-gray-900">
-                        {option.name}
-                      </h3>
+                      <h3 
+                        className="font-semibold text-gray-900"
+                        dangerouslySetInnerHTML={{ __html: option.name }}
+                      />
                       {option.popular && (
                         <Badge className="ml-2 bg-green-100 text-green-800">Most Popular</Badge>
                       )}
                     </div>
 
                     {option.description && (
-                      <p className="text-sm text-gray-600 mb-3">{option.description}</p>
+                      <p className="text-sm text-gray-600 mb-3">
+                        {option.description.replace(/<br\/?>/g, '\n').split('\n').map((line, i) => (
+                          <span key={i}>
+                            {line}
+                            {i < option.description.replace(/<br\/?>/g, '\n').split('\n').length - 1 && <br />}
+                          </span>
+                        ))}
+                      </p>
                     )}
 
                     {option.tooltip && (
@@ -223,7 +207,7 @@ export function OptionGrid({ section, selections = {}, onSelect, productId }) {
                       <img 
                         src={option.image} 
                         alt={option.name}
-                        className="w-16 h-16 mx-auto mb-3 object-cover rounded"
+                        className="w-60 h-60 mx-auto mb-3 object-contain rounded"
                       />
                     )}
 
@@ -280,7 +264,7 @@ export function OptionGrid({ section, selections = {}, onSelect, productId }) {
         </div>
       )}
 
-      {!loading && visibleOptions.length === 0 && (
+      {visibleOptions.length === 0 && (
         <div className="text-center py-8">
           <p className="text-gray-500">No options available for this section.</p>
         </div>

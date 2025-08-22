@@ -89,7 +89,10 @@ export function RadioGroup({ section, selections = {}, onSelect, productId }) {
       <div className="text-center">
         <h2 className="text-2xl font-bold text-gray-900 mb-2">{section.title}</h2>
         {section.tooltip && (
-          <p className="text-gray-600 text-sm">{section.tooltip}</p>
+          <p 
+            className="text-gray-600 text-sm"
+            dangerouslySetInnerHTML={{ __html: section.tooltip }}
+          />
         )}
       </div>
 
@@ -124,16 +127,25 @@ export function RadioGroup({ section, selections = {}, onSelect, productId }) {
                   {/* Option Content */}
                   <div className="flex-1">
                     <div className="flex items-center space-x-2">
-                      <span className="font-medium text-gray-900">{option.name}</span>
+                      <span 
+                        className="font-medium text-gray-900"
+                        dangerouslySetInnerHTML={{ __html: option.name }}
+                      />
                       {option.popular && (
                         <Badge className="bg-green-100 text-green-800">Most Popular</Badge>
                       )}
                     </div>
                     {option.description && (
-                      <p className="text-sm text-gray-600 mt-1">{option.description}</p>
+                      <p 
+                        className="text-sm text-gray-600 mt-1"
+                        dangerouslySetInnerHTML={{ __html: option.description }}
+                      />
                     )}
                     {option.tooltip && (
-                      <p className="text-xs text-gray-500 mt-1 italic">{option.tooltip}</p>
+                      <p 
+                        className="text-xs text-gray-500 mt-1 italic"
+                        dangerouslySetInnerHTML={{ __html: option.tooltip }}
+                      />
                     )}
                   </div>
 

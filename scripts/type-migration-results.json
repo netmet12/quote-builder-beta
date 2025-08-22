@@ -1,0 +1,53 @@
+{
+  "timestamp": "2025-08-21T21:01:34.724Z",
+  "processed": [
+    {
+      "typeId": "10",
+      "original": "/images/01-Metal-Doors.jpg",
+      "cloudinary": "https://res.cloudinary.com/natemoshhh/image/upload/v1755810085/quote-builder-types/type-10-01-Metal-Doors.jpg",
+      "public_id": "quote-builder-types/type-10-01-Metal-Doors"
+    },
+    {
+      "typeId": "20",
+      "original": "/images/02-Wood-Doors.jpg",
+      "cloudinary": "https://res.cloudinary.com/natemoshhh/image/upload/v1755810086/quote-builder-types/type-20-02-Wood-Doors.jpg",
+      "public_id": "quote-builder-types/type-20-02-Wood-Doors"
+    },
+    {
+      "typeId": "30",
+      "original": "/images/03-Metal-Building-Doors.jpg",
+      "cloudinary": "https://res.cloudinary.com/natemoshhh/image/upload/v1755810086/quote-builder-types/type-30-03-Metal-Building-Doors.jpg",
+      "public_id": "quote-builder-types/type-30-03-Metal-Building-Doors"
+    },
+    {
+      "typeId": "40",
+      "original": "/images/05-Frames-Only.jpg",
+      "cloudinary": "https://res.cloudinary.com/natemoshhh/image/upload/v1755810087/quote-builder-types/type-40-05-Frames-Only.jpg",
+      "public_id": "quote-builder-types/type-40-05-Frames-Only"
+    },
+    {
+      "typeId": "70",
+      "original": "http://prod-trudoor-media.s3.us-west-2.amazonaws.com/wp-content/uploads/2019/01/21112416/lite-kit-installed-in-hollow-metal-door-e1593305427638.jpg",
+      "cloudinary": "https://res.cloudinary.com/natemoshhh/image/upload/v1755810088/quote-builder-types/type-70-lite-kit-installed-in-hollow-metal-door-e1593305427638.jpg",
+      "public_id": "quote-builder-types/type-70-lite-kit-installed-in-hollow-metal-door-e1593305427638"
+    },
+    {
+      "typeId": "80",
+      "original": "https://prod-trudoor-media.s3.us-west-2.amazonaws.com/wp-content/uploads/2019/07/21110217/commercial-door-hardware.jpg",
+      "cloudinary": "https://res.cloudinary.com/natemoshhh/image/upload/v1755810089/quote-builder-types/type-80-commercial-door-hardware.jpg",
+      "public_id": "quote-builder-types/type-80-commercial-door-hardware"
+    },
+    {
+      "typeId": "90",
+      "original": "https://prod-trudoor-media.s3.us-west-2.amazonaws.com/wp-content/uploads/2019/04/21112315/louvers.jpg",
+      "cloudinary": "https://res.cloudinary.com/natemoshhh/image/upload/v1755810090/quote-builder-types/type-90-louvers.jpg",
+      "public_id": "quote-builder-types/type-90-louvers"
+    }
+  ],
+  "errors": [],
+  "summary": {
+    "total": 7,
+    "successful": 7,
+    "failed": 0
+  }
+}

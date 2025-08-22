@@ -1,5 +1,6 @@
 "use client"
 
+import { useEffect, useState } from 'react'
 import { useSupabaseQuote } from '../hooks/useSupabaseQuote.js'
 import { OptionGrid } from './layouts/OptionGrid.jsx'
 import { RadioGroup } from './layouts/RadioGroup.jsx'
@@ -92,7 +93,7 @@ function ProgressBar({ current, total, completeness }) {
   const percentage = total > 0 ? (current / total) * 100 : 0
   
   return (
-    <div className="mb-6">
+    <div className="mb-6 mx-4 my-3 lg:my-0 lg:mx-0">
       <div className="flex justify-between text-sm text-gray-600 mb-2">
         <span>Step {current + 1} of {total}</span>
         <span>{Math.round(completeness.percentage)}% Complete</span>
@@ -108,37 +109,45 @@ function ProgressBar({ current, total, completeness }) {
 }
 
 // Step Navigation Component
-function StepNavigation({ quote }) {
+function StepNavigation({ quote, onSubmitQuote }) {
   return (
     <div className="flex justify-between items-center p-4 border-b bg-white">
       <Button
         onClick={quote.prevStep}
         disabled={!quote.canGoBack()}
         variant="outline"
+        className="w-24 flex flex-col items-center"
       >
-        ← Previous
+        <span>←</span>
+        <span>Previous</span>
       </Button>
 
       <div className="text-center">
         <h2 className="font-semibold text-gray-900">
           {quote.currentProduct?.name}
         </h2>
+        <Button
+          onClick={() => quote.selectProduct(null)}
+          variant="outline"
+          className="text-xs mt-1"
+        >
+          Change Product
+        </Button>
       </div>
 
       <div className="flex space-x-2">
         <Button
           onClick={quote.nextStep}
           disabled={!quote.canAdvance()}
+          className="w-24 flex flex-col items-center"
         >
-          Next →
+          <span>→</span>
+          <span>Next</span>
         </Button>
         
         {quote.isComplete() && (
           <Button
-            onClick={() => {
-              // Here you would typically submit the quote
-              alert('Quote Complete! In a real app, this would submit the quote.')
-            }}
+            onClick={onSubmitQuote}
             variant="primary"
             className="bg-green-600 hover:bg-green-700"
           >
@@ -152,14 +161,31 @@ function StepNavigation({ quote }) {
 
 // Quote Summary Sidebar
 function QuoteSummary({ quote }) {
+  const [isOpen, setIsOpen] = useState(false)
   const summary = quote.getSummary()
   
   return (
-    <div className="w-80 bg-white border-l border-gray-200 p-6">
-      <h3 className="text-lg font-semibold text-gray-900 mb-4">Quote Summary</h3>
+    <div className="lg:w-80 bg-white lg:border-l border-gray-200 lg:p-6">
+      {/* Mobile accordion header */}
+      <div className="lg:hidden">
+        <button
+          onClick={() => setIsOpen(!isOpen)}
+          className="w-full flex justify-between items-center p-4 bg-gray-50 border border-gray-200 rounded-lg mb-4"
+        >
+          <h3 className="text-lg font-semibold text-gray-900">Quote Summary</h3>
+          <div className={`transform transition-transform ${isOpen ? 'rotate-180' : ''}`}>
+            ▼
+          </div>
+        </button>
+      </div>
       
-      {/* Progress */}
-      <div className="mb-6">
+      {/* Desktop header */}
+      <h3 className="hidden lg:block text-lg font-semibold text-gray-900 mb-4">Quote Summary</h3>
+      
+      {/* Collapsible content */}
+      <div className={`lg:block ${isOpen ? 'block' : 'hidden'} lg:px-0 px-4`}>
+        {/* Progress */}
+        <div className="mb-6">
         <div className="flex justify-between text-sm text-gray-600 mb-2">
           <span>Progress</span>
           <span>{quote.completeness.completed} of {quote.completeness.total}</span>
@@ -205,20 +231,196 @@ function QuoteSummary({ quote }) {
         </div>
       )}
 
-      {/* Actions */}
-      <div className="mt-6 space-y-2">
-        <Button 
-          onClick={() => {
-            if (confirm('Are you sure you want to start over?')) {
-              quote.resetQuote()
-            }
-          }}
-          variant="outline" 
-          className="w-full"
-        >
-          Start Over
-        </Button>
+        {/* Actions */}
+        <div className="mt-6 space-y-2">
+          <Button 
+            onClick={() => {
+              if (confirm('Are you sure you want to start over?')) {
+                quote.resetQuote()
+              }
+            }}
+            variant="outline" 
+            className="w-full"
+          >
+            Start Over
+          </Button>
+        </div>
       </div>
+    </div>
+  )
+}
+
+// Quote Review Component
+function QuoteReview({ quote, onFinishQuote, onAddAnother, onSaveForLater }) {
+  const summary = quote.getSummary()
+  
+  return (
+    <div className="max-w-4xl mx-auto p-6">
+      {/* Header */}
+      <div className="text-center mb-8">
+        <h1 className="text-3xl font-bold text-gray-900 mb-4">Quote Review</h1>
+        <div className="flex justify-center space-x-4">
+          <Button onClick={onFinishQuote} className="bg-green-600 hover:bg-green-700">
+            Finish Quote Request
+          </Button>
+          <Button onClick={onAddAnother} variant="outline">
+            Add Another Product
+          </Button>
+          <Button onClick={onSaveForLater} variant="outline">
+            Save for Later
+          </Button>
+        </div>
+      </div>
+
+      {/* Quote Summary */}
+      <div className="bg-white border rounded-lg p-6">
+        <h2 className="text-xl font-semibold text-gray-900 mb-4">{quote.currentProduct?.name}</h2>
+        
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {summary.map((item, index) => (
+            <div key={index} className="border rounded p-4">
+              <div className="font-medium text-gray-900 mb-1">{item.section}</div>
+              <div className="text-gray-600">{item.selection}</div>
+            </div>
+          ))}
+        </div>
+
+        {/* Quantity and Notes */}
+        <div className="mt-6 space-y-4">
+          <div className="flex items-center space-x-4">
+            <label className="font-medium text-gray-900">QUANTITY:</label>
+            <input
+              type="number"
+              defaultValue="1"
+              min="1"
+              className="border border-gray-300 rounded px-3 py-1 w-20"
+            />
+          </div>
+          
+          <div>
+            <label className="block font-medium text-gray-900 mb-2">NOTES:</label>
+            <textarea
+              className="w-full border border-gray-300 rounded p-3 h-32"
+              placeholder="Add any additional notes or specifications..."
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  )
+}
+
+// Quote Submission Form Component
+function QuoteSubmissionForm({ quote, onSubmit, onBack }) {
+  const [formData, setFormData] = useState({
+    deliveryMethod: 'ship',
+    companyName: '',
+    firstName: '',
+    lastName: '',
+    email: '',
+    confirmEmail: '',
+    phone: '',
+    notes: ''
+  })
+
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    onSubmit(formData)
+  }
+
+  return (
+    <div className="max-w-2xl mx-auto p-6">
+      <div className="text-center mb-8">
+        <h1 className="text-3xl font-bold text-gray-900">Finish Quote Request</h1>
+      </div>
+
+      <form onSubmit={handleSubmit} className="space-y-6">
+
+        {/* Contact Information */}
+        <div>
+          <label className="block font-medium text-gray-900 mb-2">Company Name:</label>
+          <input
+            type="text"
+            value={formData.companyName}
+            onChange={(e) => setFormData({...formData, companyName: e.target.value})}
+            className="w-full border border-gray-300 rounded px-3 py-2"
+            required
+          />
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div>
+            <label className="block font-medium text-gray-900 mb-2">First Name:</label>
+            <input
+              type="text"
+              value={formData.firstName}
+              onChange={(e) => setFormData({...formData, firstName: e.target.value})}
+              className="w-full border border-gray-300 rounded px-3 py-2"
+              required
+            />
+          </div>
+          <div>
+            <label className="block font-medium text-gray-900 mb-2">Last Name:</label>
+            <input
+              type="text"
+              value={formData.lastName}
+              onChange={(e) => setFormData({...formData, lastName: e.target.value})}
+              className="w-full border border-gray-300 rounded px-3 py-2"
+              required
+            />
+          </div>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div>
+            <label className="block font-medium text-gray-900 mb-2">Email:</label>
+            <input
+              type="email"
+              value={formData.email}
+              onChange={(e) => setFormData({...formData, email: e.target.value})}
+              className="w-full border border-gray-300 rounded px-3 py-2"
+              required
+            />
+          </div>
+          <div>
+            <label className="block font-medium text-gray-900 mb-2">Confirm Email:</label>
+            <input
+              type="email"
+              value={formData.confirmEmail}
+              onChange={(e) => setFormData({...formData, confirmEmail: e.target.value})}
+              className="w-full border border-gray-300 rounded px-3 py-2"
+              required
+            />
+          </div>
+        </div>
+
+        <div>
+          <label className="block font-medium text-gray-900 mb-2">Phone:</label>
+          <input
+            type="tel"
+            value={formData.phone}
+            onChange={(e) => setFormData({...formData, phone: e.target.value})}
+            className="w-full border border-gray-300 rounded px-3 py-2"
+            required
+          />
+        </div>
+
+        <div>
+          <label className="block font-medium text-gray-900 mb-2">Notes:</label>
+          <textarea
+            value={formData.notes}
+            onChange={(e) => setFormData({...formData, notes: e.target.value})}
+            className="w-full border border-gray-300 rounded p-3 h-32"
+            placeholder="Additional notes or requirements..."
+          />
+        </div>
+
+        <div className="flex justify-center">
+          <Button type="submit" className="bg-green-600 hover:bg-green-700 px-8">
+            → Submit Quote Request
+          </Button>
+        </div>
+      </form>
     </div>
   )
 }
@@ -226,6 +428,80 @@ function QuoteSummary({ quote }) {
 // Main Quote Builder Component
 export function SimpleQuoteBuilder() {
   const quote = useSupabaseQuote()
+  const [currentView, setCurrentView] = useState('builder') // 'builder', 'review', 'submission'
+  
+  // Auto-advance to review when quote is complete
+  useEffect(() => {
+    
+    if (quote.isComplete() && currentView === 'builder') {
+      console.log('Auto-advancing to review!')
+      setCurrentView('review')
+    }
+  }, [quote.isComplete(), currentView, quote.completeness])
+  
+  // Iframe communication setup
+  useEffect(() => {
+    // Notify parent of height changes
+    const notifyHeightChange = () => {
+      if (window.parent !== window) {
+        const height = document.documentElement.scrollHeight
+        window.parent.postMessage({
+          type: 'QUOTE_BUILDER_RESIZE',
+          height: height
+        }, '*')
+      }
+    }
+    
+    // Initial height notification
+    notifyHeightChange()
+    
+    // Monitor for height changes
+    const observer = new ResizeObserver(notifyHeightChange)
+    observer.observe(document.documentElement)
+    
+    return () => observer.disconnect()
+  }, [])
+  
+  // Submit quote function
+  const submitQuote = async (formData = null) => {
+    try {
+      const quoteData = formData || {
+        product: quote.currentProduct,
+        selections: quote.getSummary(),
+        pricing: quote.pricing,
+        timestamp: new Date().toISOString()
+      }
+      
+      // Submit to API route
+      const response = await fetch('/api/submit-quote', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(quoteData)
+      })
+      
+      if (!response.ok) {
+        throw new Error('Failed to submit quote')
+      }
+      
+      // Notify parent window if in iframe
+      if (window.parent !== window) {
+        window.parent.postMessage({
+          type: 'QUOTE_SUBMITTED',
+          data: quoteData
+        }, '*')
+      }
+      
+      // Show success message
+      alert('Quote submitted successfully!')
+      
+    } catch (error) {
+      console.error('Error submitting quote:', error)
+      alert('Error submitting quote. Please try again.')
+      throw error // Re-throw so calling function can handle it
+    }
+  }
 
   // Show loading state while initializing
   if (!quote.initialized) {
@@ -249,7 +525,69 @@ export function SimpleQuoteBuilder() {
     )
   }
 
-  // Show configuration interface
+  // Handle different views
+  if (currentView === 'review') {
+    return (
+      <div className="min-h-screen bg-gray-50">
+        <header className="bg-white border-b">
+          <div className="px-4 py-2 text-center">
+            <span className="text-sm text-gray-600">Featuring Doors Made in the USA! 🇺🇸</span>
+          </div>
+        </header>
+        <QuoteReview 
+          quote={quote}
+          onFinishQuote={() => setCurrentView('submission')}
+          onAddAnother={() => {
+            quote.selectProduct(null)
+            setCurrentView('builder')
+          }}
+          onSaveForLater={() => {
+            alert('Quote saved for later!')
+            quote.resetQuote()
+            setCurrentView('builder')
+          }}
+        />
+      </div>
+    )
+  }
+
+  if (currentView === 'submission') {
+    return (
+      <div className="min-h-screen bg-gray-50">
+        <header className="bg-white border-b">
+          <div className="px-4 py-2 text-center">
+            <span className="text-sm text-gray-600">Featuring Doors Made in the USA! 🇺🇸</span>
+          </div>
+        </header>
+        <QuoteSubmissionForm 
+          quote={quote}
+          onSubmit={async (formData) => {
+            try {
+              // Combine quote data with form data
+              const submissionData = {
+                product: quote.currentProduct,
+                selections: quote.getSummary(),
+                pricing: quote.pricing,
+                timestamp: new Date().toISOString(),
+                ...formData
+              }
+              await submitQuote(submissionData)
+              // Only reset on successful submission
+              setCurrentView('builder')
+              quote.resetQuote()
+            } catch (error) {
+              // Don't reset quote on error - user can retry
+              console.error('Quote submission failed:', error)
+              alert('Failed to submit quote. Please try again.')
+            }
+          }}
+          onBack={() => setCurrentView('review')}
+        />
+      </div>
+    )
+  }
+
+  // Show configuration interface (builder view)
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Header */}
@@ -259,11 +597,25 @@ export function SimpleQuoteBuilder() {
         </div>
       </header>
 
+      {/* Debug Info (temporary) */}
+      <div className="bg-yellow-100 p-4 border-b text-sm">
+        <strong>Debug:</strong> Complete: {quote.isComplete() ? 'YES' : 'NO'} | 
+        Sections: {quote.completeness?.completed}/{quote.completeness?.total} | 
+        Step: {quote.currentStep + 1}/{quote.visibleSections?.length} |
+        Current View: {currentView}
+        <br />
+        <strong>Section 21 Status:</strong> {
+          quote.visibleSections?.find(s => s.id === 21) ? 
+            (quote.selections[21] && quote.selections[21].length > 0 ? '✅ COMPLETED' : '⏳ VISIBLE BUT INCOMPLETE') 
+            : '❌ HIDDEN'
+        }
+      </div>
+
       {/* Step Navigation */}
-      <StepNavigation quote={quote} />
+      <StepNavigation quote={quote} onSubmitQuote={submitQuote} />
 
       {/* Main Content */}
-      <div className="flex">
+      <div className="flex flex-col lg:flex-row">
         {/* Content Area */}
         <div className="flex-1">
           {quote.loading && (

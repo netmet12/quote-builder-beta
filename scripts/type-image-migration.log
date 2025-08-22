@@ -1,0 +1,28 @@
+[2025-08-21T21:01:23.968Z] Starting type image migration...
+[2025-08-21T21:01:23.975Z] Reading data-final.json for _type_images...
+[2025-08-21T21:01:23.978Z] Found 7 type images
+[2025-08-21T21:01:23.979Z] Processing type 10: /images/01-Metal-Doors.jpg
+[2025-08-21T21:01:24.529Z]   ✓ Downloaded (13048 bytes)
+[2025-08-21T21:01:25.547Z]   ✓ Uploaded to Cloudinary: https://res.cloudinary.com/natemoshhh/image/upload/v1755810085/quote-builder-types/type-10-01-Metal-Doors.jpg
+[2025-08-21T21:01:25.748Z] Processing type 20: /images/02-Wood-Doors.jpg
+[2025-08-21T21:01:25.850Z]   ✓ Downloaded (19955 bytes)
+[2025-08-21T21:01:26.191Z]   ✓ Uploaded to Cloudinary: https://res.cloudinary.com/natemoshhh/image/upload/v1755810086/quote-builder-types/type-20-02-Wood-Doors.jpg
+[2025-08-21T21:01:26.392Z] Processing type 30: /images/03-Metal-Building-Doors.jpg
+[2025-08-21T21:01:26.494Z]   ✓ Downloaded (12744 bytes)
+[2025-08-21T21:01:27.126Z]   ✓ Uploaded to Cloudinary: https://res.cloudinary.com/natemoshhh/image/upload/v1755810086/quote-builder-types/type-30-03-Metal-Building-Doors.jpg
+[2025-08-21T21:01:27.327Z] Processing type 40: /images/05-Frames-Only.jpg
+[2025-08-21T21:01:27.427Z]   ✓ Downloaded (5240 bytes)
+[2025-08-21T21:01:27.967Z]   ✓ Uploaded to Cloudinary: https://res.cloudinary.com/natemoshhh/image/upload/v1755810087/quote-builder-types/type-40-05-Frames-Only.jpg
+[2025-08-21T21:01:28.168Z] Processing type 70: http://prod-trudoor-media.s3.us-west-2.amazonaws.com/wp-content/uploads/2019/01/21112416/lite-kit-installed-in-hollow-metal-door-e1593305427638.jpg
+[2025-08-21T21:01:28.391Z]   ✓ Downloaded (16496 bytes)
+[2025-08-21T21:01:29.055Z]   ✓ Uploaded to Cloudinary: https://res.cloudinary.com/natemoshhh/image/upload/v1755810088/quote-builder-types/type-70-lite-kit-installed-in-hollow-metal-door-e1593305427638.jpg
+[2025-08-21T21:01:29.256Z] Processing type 80: https://prod-trudoor-media.s3.us-west-2.amazonaws.com/wp-content/uploads/2019/07/21110217/commercial-door-hardware.jpg
+[2025-08-21T21:01:29.458Z]   ✓ Downloaded (10134 bytes)
+[2025-08-21T21:01:29.829Z]   ✓ Uploaded to Cloudinary: https://res.cloudinary.com/natemoshhh/image/upload/v1755810089/quote-builder-types/type-80-commercial-door-hardware.jpg
+[2025-08-21T21:01:30.031Z] Processing type 90: https://prod-trudoor-media.s3.us-west-2.amazonaws.com/wp-content/uploads/2019/04/21112315/louvers.jpg
+[2025-08-21T21:01:30.107Z]   ✓ Downloaded (3898 bytes)
+[2025-08-21T21:01:34.722Z]   ✓ Uploaded to Cloudinary: https://res.cloudinary.com/natemoshhh/image/upload/v1755810090/quote-builder-types/type-90-louvers.jpg
+[2025-08-21T21:01:34.723Z] SQL updates saved to: ./scripts/update-type-images.sql
+[2025-08-21T21:01:34.724Z] Results saved to: ./scripts/type-migration-results.json
+[2025-08-21T21:01:34.724Z] Type image migration completed!
+[2025-08-21T21:01:34.724Z] Success: 7/7 images

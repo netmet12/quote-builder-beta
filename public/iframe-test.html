@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quote Builder - Shopify Integration Test</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f8f9fa;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .shopify-header {
+            background: #108043;
+            color: white;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+        }
+        .iframe-container {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        #quote-iframe {
+            width: 100%;
+            border: none;
+            min-height: 600px;
+            transition: height 0.3s ease;
+        }
+        .debug-info {
+            margin-top: 20px;
+            padding: 15px;
+            background: #e9ecef;
+            border-radius: 8px;
+        }
+        .debug-log {
+            max-height: 200px;
+            overflow-y: auto;
+            background: #f8f9fa;
+            padding: 10px;
+            margin-top: 10px;
+            border-radius: 4px;
+            font-family: monospace;
+            font-size: 12px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="shopify-header">
+            <h1>🛍️ Your Shopify Store - Quote Builder Integration Test</h1>
+            <p>Testing iframe embedding with browser navigation support</p>
+        </div>
+
+        <div class="iframe-container">
+            <iframe 
+                id="quote-iframe" 
+                src="http://localhost:3001"
+                title="Quote Builder">
+            </iframe>
+        </div>
+
+        <div class="debug-info">
+            <h3>Debug Information</h3>
+            <p><strong>Current URL:</strong> <span id="current-url">-</span></p>
+            <p><strong>Messages Received:</strong></p>
+            <div id="message-log" class="debug-log"></div>
+        </div>
+    </div>
+
+    <script>
+        const iframe = document.getElementById('quote-iframe');
+        const messageLog = document.getElementById('message-log');
+        const currentUrlSpan = document.getElementById('current-url');
+
+        // Listen for messages from iframe
+        window.addEventListener('message', function(event) {
+            // In production, verify event.origin matches your domain
+            console.log('Message received from iframe:', event.data);
+            
+            const logEntry = document.createElement('div');
+            logEntry.innerHTML = `<strong>${new Date().toLocaleTimeString()}:</strong> ${JSON.stringify(event.data, null, 2)}`;
+            messageLog.appendChild(logEntry);
+            messageLog.scrollTop = messageLog.scrollHeight;
+
+            // Handle different message types
+            switch(event.data.type) {
+                case 'QUOTE_BUILDER_RESIZE':
+                    iframe.style.height = event.data.height + 'px';
+                    break;
+                    
+                case 'QUOTE_SUBMITTED':
+                    alert('Quote submitted! Check the debug log for details.');
+                    // In a real Shopify app, you might:
+                    // - Add to cart
+                    // - Redirect to checkout
+                    // - Show success page
+                    break;
+            }
+        });
+
+        // Update current URL display
+        function updateUrl() {
+            try {
+                currentUrlSpan.textContent = iframe.contentWindow.location.href;
+            } catch (e) {
+                currentUrlSpan.textContent = 'Cross-origin access blocked';
+            }
+        }
+
+        // Monitor URL changes (limited by same-origin policy)
+        setInterval(updateUrl, 1000);
+        
+        // Initial URL update
+        iframe.onload = updateUrl;
+    </script>
+</body>
+</html>
